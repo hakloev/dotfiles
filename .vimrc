@@ -3,6 +3,16 @@
 " Author: Seth Mason
 " Created: 19 Nov 2003 10:20:19
 
+" Added by Håkon Løvdal
+"I like using the mouse for selecting in some cases
+set mouse=a
+
+"Bind norwegian letters for tab and split movement
+nnoremap å :tabnew<cr>
+nnoremap ø :tabprev<cr>
+nnoremap æ :tabnext<cr>
+
+
 " Last-modified: 05 Nov 2012 21:49:36
 " All my Vim commands for the taking
 " Works on cygwin but not very well on unix machines...still trying to figure
