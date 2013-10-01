@@ -4,6 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 # Set charmap
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PATH=/usr/texbin:$PATH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
