@@ -5,6 +5,13 @@ ZSH=$HOME/.oh-my-zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Customize to your needs...
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin
+
+HISTFILE=~/.zsh_history
+HISTSIZE=5000
+SAVEHIST=4500
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -14,6 +21,7 @@ ZSH_THEME="risto"
 # Example aliases
 alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
+alias loevdal="mosh hakloev@loevdal.net"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -42,6 +50,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+autoload -U colors && colors
 
-# Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin
+HOSTNAME="'hostname'"
+
+if [ "$HOST" = "loevdal.local" ] ; then
+    export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+else 
+    export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+fi
