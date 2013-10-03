@@ -227,4 +227,4 @@ map <c-a> ggVG
 " Undo in insert mode.
 imap <c-z> <c-o>u
 
-
+syn on
