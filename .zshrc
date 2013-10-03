@@ -52,10 +52,18 @@ source $ZSH/oh-my-zsh.sh
 
 autoload -U colors && colors
 
-HOSTNAME="'hostname'"
-
-if [ "$HOST" = "loevdal.local" ] ; then
+if [[ "$HOST" == 'loevdal.local' ]] ; then
     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+    echo "You are on host: loevdal.local, Mac OS X"
+elif [[ "$OSTYPE" = 'darwin12.0' ]] ; then
+    export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[cyan]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+    echo "You are on a Mac OS X host"
+elif [[ "$OSTYPE" = 'linux-gnu' ]] ; then
+     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+     echo "You are on a Linux OS host"
 else 
-    export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[red]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+     echo "You are not on any recognized host"
 fi
+
+
