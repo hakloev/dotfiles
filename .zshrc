@@ -7,7 +7,7 @@ export LANG=en_US.UTF-8
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala-2.10.2/bin 
-
+# History 
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
 SAVEHIST=4500
@@ -22,6 +22,7 @@ ZSH_THEME="risto"
 alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias loevdal="mosh hakloev@loevdal.net"
+alias ls="ls -lah"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -50,8 +51,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Loading colors for PS1
 autoload -U colors && colors
 
+# Exporting PS1, check OS or host and set color due to that
 if [[ "$HOST" == 'loevdal.local' ]] ; then
     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
     echo "You are on host: loevdal.local, Mac OS X"
@@ -65,5 +68,3 @@ else
      export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[red]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
      echo "You are not on any recognized host"
 fi
-
-
