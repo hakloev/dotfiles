@@ -22,7 +22,7 @@ ZSH_THEME="risto"
 alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias loevdal="mosh hakloev@loevdal.net"
-alias ls="ls -lah"
+alias lss="ls -lah"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
