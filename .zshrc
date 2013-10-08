@@ -6,7 +6,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala-2.10.2/bin 
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala/bin 
 # History 
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
@@ -65,6 +65,6 @@ elif [[ "$OSTYPE" = 'linux-gnu' ]] ; then
      export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
      echo "You are on a Linux OS host"
 else 
-     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[red]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+     export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[yellow]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
      echo "You are not on any recognized host"
 fi
