@@ -19,43 +19,49 @@ ZSH_THEME="risto"
 # Loading colors for PS1
 autoload -U colors && colors
 
+# Support 256-colors
+export TERM=xterm-256color
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git osx sublime web-search rand-quote)
 
 source $ZSH/oh-my-zsh.sh
 
-# Save OSTYPE to local variable
-OS="$OSTYPE"
-
 # Exporting PS1, check OS or host and set color and aliases according to OS
-if [[ $OS = 'darwin13.0' ]] ; then # Mac OS X
+if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
 	# Customize to your needs for the $PATH...
-	export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala/bin 
+	export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala/bin 
+	
 	# PS1 with Git-plugin
-	export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
+	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
+	
 	# Aliases
 	alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 	alias caracal="mosh haakool@caracal.stud.ntnu.no"
 	alias loevdal="mosh hakloev@loevdal.net"
 	alias morgan="mosh captain@192.168.1.21"
-	# State what kind of OS:
-	echo $OS
-elif [[ $OS = 'linux-gnu' ]] ; then # Linux-distro with GNU
+elif [[ $OSTYPE = 'linux-gnu' ]] ; then # Linux-distro with GNU
 	# PS1 with Git-plugin
-	export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
-	# State what kind of OS:
-	echo $OS
+	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
 else
-	export PS1="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[cyan]%}%M:%{$fg[white]%}%2~ $(git_prompt_info)%{$reset_color%}%(!.#.$) %"
-	# State what kind of OS:
-	echo $OS
+	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[cyan]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
+    echo "Not recognized OS"
 fi
+
+# Print the OS-type
+echo $OSTYPE
+
+# Show Git-Branch on right side
+RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
+
+
 # Universal aliases
 alias laa="ls -lah"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias v="vim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
