@@ -56,7 +56,6 @@ echo $OSTYPE
 # Show Git-Branch on right side
 RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
 
-
 # Universal aliases
 alias laa="ls -lah"
 alias zshconfig="vim ~/.zshrc"
