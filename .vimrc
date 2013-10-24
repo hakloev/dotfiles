@@ -7,6 +7,10 @@
 "I like using the mouse for selecting in some cases
 set mouse=a
 
+" Add solarized theme
+set background=dark
+colorscheme solarized
+
 "Bind norwegian letters for tab and split movement
 nnoremap å :tabnew<cr>
 nnoremap ø :tabprev<cr>
