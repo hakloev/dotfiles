@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/hakloev/Desktop/scala-dist-master/tool-support/src/vim'
 let g:netrw_dirhist_2='/Users/hakloev/Desktop/scala-dist-master/tool-support/src'
 let g:netrw_dirhist_3='/Users/hakloev/Desktop/scala-dist-master/tool-support/src/vim'
 let g:netrw_dirhist_4='/Users/hakloev/Desktop/scala-dist-master/tool-support/src/vim/ftdetect'
 let g:netrw_dirhist_5='/Users/hakloev/git/prosjektsau/.git'
+let g:netrw_dirhist_6='/Users/hakloev/git/TDT4117/oving3'
