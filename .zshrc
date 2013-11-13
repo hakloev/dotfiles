@@ -58,9 +58,13 @@ RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
 
 # Universal aliases
 alias laa="ls -lah"
+alias rr="rm -r"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias v="vim"
+
+# Editor
+EDITOR='vim' 
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
