@@ -1,0 +1,10 @@
+[user]
+	name = Håkon Ødegård Løvdal
+	email = hakloev@gmail.com
+[push]
+	default = matching
+[core]
+	autocrlf = input
+    excludesfile = ~/.gitexcludes
+[merge]
+	tool = opendiff

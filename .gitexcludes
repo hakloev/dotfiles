@@ -1,0 +1,16 @@
+# To use this file, add the following to your "~/.gitconfig" file.
+# [core]
+#     excludesfile = ~/.gitexcludes
+
+# Compiled stuff 
+*.class
+
+# Packages
+
+*.jar
+
+# OS generated fuck-up files #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
