@@ -14,3 +14,9 @@ echo "Installed all dot-files, but did not move .git and .vim"
 echo "Will now generate ssh-public key"
 
 ssh-keygen
+
+echo "Installing Homebrew"
+
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+echo "Remember the sudo-command with htop"
