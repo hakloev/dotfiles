@@ -7,9 +7,13 @@
 "I like using the mouse for selecting in some cases
 set mouse=a
 
+" Setting shell to zsh"
+set shell=/bin/zsh
+
 " Add solarized theme
-set background=dark
+set background=light
 colorscheme solarized
+syn on
 
 "Bind norwegian letters for tab and split movement
 nnoremap å :tabnew<cr>
@@ -169,13 +173,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" for cygwin
-set shell=C:/cygwin/bin/bash
-
-set shellcmdflag=--login\ -c
-set shellxquote=\"
-
-
 " ************************************************************************
 " C O M M A N D S
 
@@ -230,5 +227,3 @@ map <c-a> ggVG
 
 " Undo in insert mode.
 imap <c-z> <c-o>u
-
-syn on
