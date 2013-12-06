@@ -11,7 +11,7 @@ set mouse=a
 set shell=/bin/zsh
 
 " Add solarized theme
-set background=light
+set background=dark
 colorscheme solarized
 syn on
 
