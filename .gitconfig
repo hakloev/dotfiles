@@ -7,4 +7,6 @@
 	autocrlf = input
     excludesfile = ~/.gitexcludes
 [merge]
-	tool = opendiff
+    tool = opendiff
+[color]
+    status = always
