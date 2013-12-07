@@ -18,6 +18,7 @@ ZSH_THEME="risto"
 
 # LOAD COLORS FOR PS1
 autoload -U colors && colors
+export CLICOLOR=1
 
 # SUPPORT 256-COLORS
 export TERM=xterm-256color
@@ -25,7 +26,7 @@ export TERM=xterm-256color
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime web-search rand-quote)
+plugins=(git osx sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,7 +40,6 @@ if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
 	
 	# Aliases
     alias net="open -a Safari.app"
-    alias logsys="tail -f /var/log/system.log"
 	alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 	alias caracal="mosh haakool@caracal.stud.ntnu.no"
 	alias loevdal="mosh hakloev@loevdal.net"
@@ -59,6 +59,7 @@ echo $OSTYPE
 RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
 
 # Universal aliases
+alias logsys="tail -f /var/log/system.log"
 alias c="clear"
 alias ipecho="curl ipecho.net/plain; echo"
 alias laa="ls -lah"
