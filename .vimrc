@@ -1,4 +1,5 @@
-" File: .vimrc
+"
+"File: .vimrc
 " Version: 1
 " Author: Håkon Løvdal
 " Created: 07 Dec 2013
@@ -99,7 +100,7 @@ set laststatus=2
 if version >= 700
   highlight statusLine cterm=bold ctermfg=black ctermbg=white                   "Initial
   au InsertLeave * highlight StatusLine cterm=bold ctermfg=black ctermbg=white  "Visual Mode
-  au InsertEnter * highlight StatusLine cterm=bold ctermfg=black ctermbg=white    "Insert Mode
+  au InsertEnter * highlight StatusLine cterm=bold ctermfg=black ctermbg=grey    "Insert Mode
 endif
 
 " ========================================================== 

@@ -20,8 +20,9 @@ ZSH_THEME="risto"
 autoload -U colors && colors
 export CLICOLOR=1
 
+
 # SUPPORT 256-COLORS
-export TERM=xterm-256color
+export TERM='xterm-256color'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -43,7 +44,10 @@ if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
 	alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
 	alias caracal="mosh haakool@caracal.stud.ntnu.no"
 	alias loevdal="mosh hakloev@loevdal.net"
-	alias morgan="mosh captain@192.168.1.21"
+	alias plink="mosh plex@192.168.1.6"
+    
+    # SUPPORT 256-COLORS
+    export TERM='xterm-256color'
 elif [[ $OSTYPE = 'linux-gnu' ]] ; then # Linux-distro with GNU
 	# PS1 with Git-plugin
 	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
@@ -51,9 +55,6 @@ else
 	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[cyan]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
     echo "Not recognized OS"
 fi
-
-# Print the OS-type
-echo $OSTYPE
 
 # Show Git-Branch on right side
 RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
@@ -66,9 +67,15 @@ alias laa="ls -lah"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias v="vim"
+alias rlink="mosh plex@link.loevdal.net"
 
 # Editor
 EDITOR='vim' 
+
+# Print the OS-type
+echo $OSTYPE
+
+
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
