@@ -21,3 +21,4 @@ export GREP_OPTIONS=--color=auto
 
 # Enables color for iTerm
 export TERM=xterm-color
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala/bin:/usr/local/mysql/bin
