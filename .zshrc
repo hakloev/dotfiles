@@ -42,8 +42,6 @@ if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
 	# Aliases
     alias net="open -a Safari.app"
 	alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
-	alias caracal="mosh haakool@caracal.stud.ntnu.no"
-	alias loevdal="mosh hakloev@loevdal.net"
 	alias plink="mosh plex@192.168.1.6"
     
     # SUPPORT 256-COLORS
@@ -68,6 +66,9 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias v="vim"
 alias rlink="mosh plex@link.loevdal.net"
+alias caracal="mosh haakool@caracal.stud.ntnu.no"
+alias loevdal="mosh hakloev@loevdal.net"
+
 
 # Editor
 EDITOR='vim' 
