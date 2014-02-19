@@ -4,7 +4,7 @@
 
 for file in bash_profile gitconfig gitexcludes screenrc vimrc zshrc vim; do
     rm -f ~/.$file
-    ln -s $PWD/$file ~/.$file;
+    ln -s $PWD/.$file ~/.$file;
 done
 
 touch ~/.zsh_history
