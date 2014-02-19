@@ -20,10 +20,6 @@ ZSH_THEME="risto"
 autoload -U colors && colors
 export CLICOLOR=1
 
-
-# SUPPORT 256-COLORS
-#export TERM='xterm-256color'
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
