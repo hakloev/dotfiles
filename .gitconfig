@@ -6,6 +6,7 @@
 [core]
 	autocrlf = input
     excludesfile = ~/.gitexcludes
+	editor = vim
 [merge]
     tool = opendiff
 [color]
