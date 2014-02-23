@@ -17,8 +17,8 @@ SAVEHIST=4500
 ZSH_THEME="risto"
 
 # LOAD COLORS FOR PS1
-autoload -U colors && colors
-export CLICOLOR=1
+#autoload -U colors && colors
+#export CLICOLOR=1
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -71,8 +71,6 @@ EDITOR='vim'
 
 # Print the OS-type
 echo $OSTYPE
-
-
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
