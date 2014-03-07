@@ -7,8 +7,9 @@
 " ========================================================== 
 " GENERAL
 
+syntax enable
 set background=dark         " Assume a dark background
-colorscheme molokai
+colorscheme solarized
 "let g:molokai_original = 1
 
 if !has('gui')
