@@ -9,7 +9,7 @@
 
 syntax enable
 set background=dark         " Assume a dark background
-colorscheme solarized
+colorscheme molokai
 "let g:molokai_original = 1
 
 if !has('gui')

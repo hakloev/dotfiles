@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # Exporting PS1, check OS or host and set color and aliases according to OS
 if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
 	# Customize to your needs for the $PATH...
-	export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Applications/scala/bin
+	export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/hakloev/pebble-dev/PebbleSDK-current/bin
 
 	# PS1 with Git-plugin
 	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
