@@ -3,7 +3,7 @@
 ls ~/git/unix-dot/dotfiles | while read FILE
 
 do
-    rm ~/.$FILE
+    rm -r ~/.$FILE
     ln -s ~/git/unix-dot/dotfiles/$FILE ~/.$FILE
     echo "Created symlink for $FILE"
 done

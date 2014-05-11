@@ -1,18 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 
 SUDO=''
 
 # Make sure root
-
-if [[ $EUID -ne 0 ]]; then
-    if [ -x /usr/bin/sudo ]; then
-        SUDO='sudo'
-    else
-        exit "You are not root, and sudo is not installed"
+checkRoot() {
+    if [ "$EUID" != "0" ]; then
+        if [ -x /usr/bin/sudo ]; then
+            SUDO='sudo'
+        else
+            exit "You are not root, and sudo is not installed"
+        fi
     fi
-fi
+}
 
-function installDotfiles() {
+installDotfiles() {
     echo "Installing dotfiles"
     mkdir -p ~/git
     if [ ! -d ~/git/unix-dot ]; then
@@ -21,7 +22,7 @@ function installDotfiles() {
     ~/git/unix-dot/deployDot.sh
 
     if [ "$OSTYPE" != "darwin13" ]; then
-        if [[ $EUID -ne 0 ]]; then
+        if [ "$EUID" != "0" ]; then
              echo "Installing dotfiles for root"
              $SUDO su -c "git clone https://github.com/hakloev/unix-dot.git ~/git/unix-dot"
              $SUDO su -c "~/git/unix-dot/deployDot.sh"
@@ -29,8 +30,8 @@ function installDotfiles() {
     fi
 }
 
-function installHomebrew() {
-    which -s brew
+installHomebrew() {
+    which -a brew
     if [ $? != 0 ]; then
         echo "Installing Homebrew"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -40,8 +41,8 @@ function installHomebrew() {
     fi
 }
 
-function zshFix() {
-    which -s zsh
+zshFix() {
+    which -a zsh
     if [ $? != 0 ]; then
         echo "ZSH is not installed"
     else
@@ -61,7 +62,7 @@ function zshFix() {
         fi
 
         if [ "$OSTYPE" != "darwin13" ]; then
-            if [[ $EUID -ne 0 ]]; then
+            if [ "$EUID" != "0" ]; then
                 echo "Installing oh-my-zsh for root"
                 $SUDO su -c curl -L http://install.ohmyz.sh | sh
             fi
@@ -69,7 +70,7 @@ function zshFix() {
     fi
 }
 
-function osxFix() {
+osxFix() {
     echo "Setting OS X spesific settings"
     # Always open everything in Finder's list view. This is important.
     defaults write com.apple.Finder FXPreferredViewStyle Nlsv
@@ -89,19 +90,20 @@ function osxFix() {
     killall Finder
 }
 
-function createMotd() {
+createMotd() {
     echo "Creaing motd"
     curl --compressed "http://www.lemoda.net/games/figlet/figlet.cgi?text=$(hostname)&font=puffy&width=80" | $SUDO tee /etc/motd
     echo "Created motd"
 }
 
-function main() {
+main() {
+    checkRoot    
     if [ "$OSTYPE" = "darwin13" ]; then
         echo "Bootstrapping Mac OS X"
         installHomebrew
         osxFix
     else
-        echo "Bootstrapping $OSTYPE"
+        echo "Bootstrapping "$OSTYPE""
         createMotd
     fi
     zshFix
