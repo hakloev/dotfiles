@@ -64,7 +64,7 @@ zshFix() {
         if [ "$OSTYPE" != "darwin13" ]; then
             if [ "$EUID" != "0" ]; then
                 echo "Installing oh-my-zsh for root"
-                $SUDO su -c curl -L http://install.ohmyz.sh | sh
+                $SUDO su -c "curl -L http://install.ohmyz.sh | sh"
             fi
         fi
     fi
