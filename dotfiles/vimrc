@@ -9,8 +9,16 @@
 
 syntax enable
 set background=dark         " Assume a dark background
-colorscheme molokai
+
+" Molokai
+"colorscheme molokai
 "let g:molokai_original = 1
+
+" Solarized 
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors = 16
+colorscheme solarized
 
 if !has('gui')
     set term=$TERM          " Make arrow and other keys work
@@ -96,6 +104,13 @@ set nospell
 set statusline=%<\ %n:%f\ %y%m%r\ [%{strlen(&fenc)?&fenc:&enc}]%=%-35.(Line:\ %l\ of\ %L,\ Col:\ %c%V\ (%P)%)
 
 set laststatus=2
+
+" OmniFunc 
+
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " Change highlighting based on mode
 if version >= 700

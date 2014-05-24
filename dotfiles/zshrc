@@ -55,16 +55,14 @@ RPROMPT='$(git_prompt_info)%{$reset_color%} $EPS1'
 
 # Universal aliases
 alias logsys="tail -f /var/log/system.log"
-alias c="clear"
 alias ipecho="curl ipecho.net/plain; echo"
 alias laa="ls -lah"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias v="vim"
-alias rlink="mosh plex@link.loevdal.net"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias loevdal="mosh hakloev@loevdal.net"
-
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Editor
 EDITOR='vim' 
