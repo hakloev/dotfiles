@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/hakloev/git/fellesprosjektet/.git'
-let g:netrw_dirhist_2='/Users/hakloev/.oh-my-zsh'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/webapps/navi/loevdalnet/static'
+let g:netrw_dirhist_2='/webapps/navi/loevdalnet/static/css'
+let g:netrw_dirhist_3='/webapps/navi/loevdalnet/static'
+let g:netrw_dirhist_4='/webapps/navi/loevdalnet'
+let g:netrw_dirhist_5='/webapps/navi/loevdalnet/loevdalnet'
