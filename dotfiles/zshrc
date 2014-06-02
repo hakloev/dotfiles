@@ -28,39 +28,10 @@ plugins=(virtualenv git osx sublime web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# Exporting PS1, check OS or host and set color and aliases according to OS
-if [[ $OSTYPE = 'darwin13.0' ]] ; then # Mac OS X
-	# Customize to your needs for the $PATH...
-	export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin:/Users/hakloev/pebble-dev/PebbleSDK-current/bin
-
-	# PS1 with Git-plugin
-#	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[blue]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
-	
-	# Aliases
-    alias net="open -a Safari.app"
-	alias DnB="vim ~/Documents/Brev\ ol\ /masters.txt"
-	alias plink="mosh plex@192.168.1.6"
-    
-    # SUPPORT 256-COLORS
-#    export TERM='xterm-256color'
-elif [[ $OSTYPE = 'linux-gnu' ]] ; then # Linux-distro with GNU
-	# PS1 with Git-plugin
-#    PROMPT="(\"$VIRTUAL_ENV\")%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
-else
-#	PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[cyan]%}%M:%{$fg[white]%}%2~ %(!.#.$) "
-    echo "Not recognized OS"
-fi
-
-# Show Git-Branch on right side
-#RPROMPT='$(virtualenv_info)%{$reset_color%} $(git_prompt_info)%{$reset_color%} $EPS1'
-
 # Universal aliases
-alias logsys="tail -f /var/log/system.log"
 alias ipecho="curl ipecho.net/plain; echo"
-alias laa="ls -lah"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias v="vim"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias loevdal="mosh hakloev@loevdal.net"
 alias tmux="TERM=screen-256color-bce tmux"
