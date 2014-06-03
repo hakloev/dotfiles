@@ -1,7 +1,7 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/webapps/navi/loevdalnet/static'
-let g:netrw_dirhist_2='/webapps/navi/loevdalnet/static/css'
-let g:netrw_dirhist_3='/webapps/navi/loevdalnet/static'
-let g:netrw_dirhist_4='/webapps/navi/loevdalnet'
-let g:netrw_dirhist_5='/webapps/navi/loevdalnet/loevdalnet'
+let g:netrw_dirhist_1='/webapps/navi/loevdalnet/static/css'
+let g:netrw_dirhist_2='/webapps/navi/loevdalnet/templates/blog'
+let g:netrw_dirhist_3='/webapps/loevdalnet/website'
+let g:netrw_dirhist_4='/webapps/loevdalnet/website/.git'
+let g:netrw_dirhist_5='/webapps/loevdalnet/website'
