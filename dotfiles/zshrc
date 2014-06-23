@@ -35,6 +35,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias loevdal="mosh hakloev@loevdal.net"
 alias tmux="TERM=screen-256color-bce tmux"
+alias airport="~/git/scripts/airport.sh"
 
 # Editor
 EDITOR='vim' 
