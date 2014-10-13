@@ -10,6 +10,7 @@ function install_brew() {
     if [ $? != 0 ]; then
         echo "Installing Homebrew"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+        brew doctor
     else 
         echo "Homebrew already installed"
     fi
@@ -66,6 +67,7 @@ function main() {
     exit
     if [[ 'uname -s' == Darwin ]]; then
         echo "Bootstrapping Mac OS X"
+        xcode-select --install
         config_osx
         install_brew
     else
