@@ -33,7 +33,7 @@ alias update_dotfiles="cd ~/git/unix-dot; git pull; cd ~"
 EDITOR='vim' 
 
 # OSX spesific things
-if [[ 'uname -s' == Darwin ]];
+if [[ $(uname -s) == "Darwin" ]];
 then
     export M2_HOME=/Users/hakloev/Downloads/apache-maven-3.2.3 
     export M2=$M2_HOME/bin
