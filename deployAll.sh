@@ -6,7 +6,7 @@ function deploy_dot_files() {
 }
 
 function install_brew() {
-    which -a brew
+    which -a brew &> /dev/null
     if [ $? != 0 ]; then
         echo "Installing Homebrew"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -27,13 +27,13 @@ function set_motd() {
 }
 
 function zsh_fix() {
-    which -a zsh
+    which -a zsh &> /dev/null
     if [ $? != 0 ]; then
         echo "ZSH is not installed"
     else
         if [ "$SHELL" != "/bin/zsh" ]; then
             echo "Changing shell to ZSH"
-            chsh -s /bin/zsh
+            chsh -s /bin/zsh &> /dev/null
         else
             echo "Default shell already ZSH"
         fi
@@ -49,17 +49,17 @@ function zsh_fix() {
 
 function main() {
     deploy_dot_files
-    exit
-    if [[ 'uname -s' == Darwin ]]; then
+    if [[ $(uname -s) == "Darwin" ]]; then
         echo "Bootstrapping Mac OS X"
         xcode-select --install
-        config_osx
+        zsh_fix
         install_brew
+        config_osx
     else
         echo "Bootstrapping $(uname -s)"
         set_motd
+        zsh_fix
     fi
-    zshFix
 }
 
 main
