@@ -1,76 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
-SUDO=''
-
-# Make sure root
-checkRoot() {
-    if [ "$EUID" != "0" ]; then
-        if [ -x /usr/bin/sudo ]; then
-            SUDO='sudo'
-        else
-            exit "You are not root, and sudo is not installed"
-        fi
-    fi
-}
-
-installDotfiles() {
+function deploy_dot_files() {
     echo "Installing dotfiles"
-    mkdir -p ~/git
-    if [ ! -d ~/git/unix-dot ]; then
-        git clone https://github.com/hakloev/unix-dot.git ~/git/unix-dot
-    fi
     ~/git/unix-dot/deployDot.sh
-
-    if [ "$OSTYPE" != "darwin13" ]; then
-        if [ "$EUID" != "0" ]; then
-             echo "Installing dotfiles for root"
-             $SUDO su -c "git clone https://github.com/hakloev/unix-dot.git ~/git/unix-dot"
-             $SUDO su -c "~/git/unix-dot/deployDot.sh"
-        fi
-    fi
 }
 
-installHomebrew() {
+function install_brew() {
     which -a brew
     if [ $? != 0 ]; then
         echo "Installing Homebrew"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-        echo "Installed Homebrew"
     else 
         echo "Homebrew already installed"
     fi
 }
 
-zshFix() {
-    which -a zsh
-    if [ $? != 0 ]; then
-        echo "ZSH is not installed"
-    else
-        if [ "$SHELL" != "/bin/zsh" ]; then
-            echo "Changing shell to ZSH"
-            chsh -s /bin/zsh
-        else
-            echo "Default shell already ZSH"
-        fi
-        
-        if [ ! -d ~/.oh-my-zsh ]; then
-            echo "Downloading oh-my-zsh"
-            curl -L http://install.ohmyz.sh | sh
-            echo "oh-my-zsh downloaded"
-        else
-            echo "oh-my-zsh already installed"
-        fi
-
-        if [ "$OSTYPE" != "darwin13" ]; then
-            if [ "$EUID" != "0" ]; then
-                echo "Installing oh-my-zsh for root"
-                $SUDO su -c "curl -L http://install.ohmyz.sh | sh"
-            fi
-        fi
-    fi
-}
-
-osxFix() {
+function config_osx() {
     echo "Setting OS X spesific settings"
     # Always open everything in Finder's list view. This is important.
     defaults write com.apple.Finder FXPreferredViewStyle Nlsv
@@ -90,24 +35,44 @@ osxFix() {
     killall Finder
 }
 
-createMotd() {
+function set_motd() {
     echo "Creaing motd"
     curl --compressed "http://www.lemoda.net/games/figlet/figlet.cgi?text=$(hostname)&font=puffy&width=80" | $SUDO tee /etc/motd
-    echo "Created motd"
 }
 
-main() {
-    checkRoot    
-    if [ "$OSTYPE" = "darwin13" ]; then
-        echo "Bootstrapping Mac OS X"
-        installHomebrew
-        osxFix
+function zsh_fix() {
+    which -a zsh
+    if [ $? != 0 ]; then
+        echo "ZSH is not installed"
     else
-        echo "Bootstrapping "$OSTYPE""
-        createMotd
+        if [ "$SHELL" != "/bin/zsh" ]; then
+            echo "Changing shell to ZSH"
+            chsh -s /bin/zsh
+        else
+            echo "Default shell already ZSH"
+        fi
+        
+        if [ ! -d ~/.oh-my-zsh ]; then
+            echo "Downloading oh-my-zsh"
+            curl -L http://install.ohmyz.sh | sh
+        else
+            echo "oh-my-zsh already installed"
+        fi
+    fi
+}
+
+function main() {
+    deploy_dot_files
+    exit
+    if [[ 'uname -s' == Darwin ]]; then
+        echo "Bootstrapping Mac OS X"
+        config_osx
+        install_brew
+    else
+        echo "Bootstrapping $(uname -s)"
+        set_motd
     fi
     zshFix
-    installDotfiles
 }
 
 main
