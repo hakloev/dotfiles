@@ -16,7 +16,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx tmux mosh web-search, django pip python)
+plugins=(git osx tmux mosh web-search django pip python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -26,7 +26,6 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias caracal="mosh haakool@caracal.stud.ntnu.no"
 alias hakloev="mosh hakloev@hakloev.no"
-alias tmux="TERM=screen-256color-bce tmux"
 alias update_dotfiles="cd ~/git/unix-dot; git pull; cd ~"
 
 # Editor
