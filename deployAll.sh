@@ -9,7 +9,7 @@ function install_brew() {
     which -a brew &> /dev/null
     if [ $? != 0 ]; then
         echo "Installing Homebrew"
-        ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         brew doctor
     else 
         echo "Homebrew already installed"

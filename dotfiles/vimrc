@@ -15,10 +15,12 @@ set background=dark         " Assume a dark background
 "let g:molokai_original = 1
 
 " Solarized 
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors = 16
-colorscheme solarized
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"let g:solarized_termcolors = 16
+"colorscheme solarized
+
+colorscheme ingretu
 
 if !has('gui')
     set term=$TERM          " Make arrow and other keys work
