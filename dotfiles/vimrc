@@ -83,6 +83,10 @@ set showmatch
 " Turn of spell check
 set nospell
 
+nnoremap [ :tabnew<cr>
+nnoremap ' :tabnext<cr>
+nnoremap ; :tabprev<cr>
+
 " ========================================================== 
 " STATUSLINE
 
