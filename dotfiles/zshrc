@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 alias ipecho="curl ipecho.net/plain; echo"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias caracal="mosh haakool@caracal.stud.ntnu.no"
+alias caracal="mosh haakool@caracal.stud.ntnu.no -- sh -c 'exec zsh'"
 alias hakloev="mosh hakloev@hakloev.no"
 alias update_dotfiles="cd ~/git/unix-dot; git pull; cd ~"
 
