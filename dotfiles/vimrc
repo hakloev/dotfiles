@@ -47,6 +47,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Wildmeny for multiple alternatives
+set wildmenu
+
 " Display line numbers
 set number
 
