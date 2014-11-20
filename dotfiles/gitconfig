@@ -12,3 +12,4 @@
     tool = opendiff
 [color]
     status = always
+	ui = true

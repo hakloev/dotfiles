@@ -11,8 +11,8 @@ syntax enable
 set background=dark         " Assume a dark background
 
 " Molokai
-"colorscheme molokai
-"let g:molokai_original = 1
+colorscheme molokai
+let g:molokai_original = 1
 
 " Solarized 
 "let g:solarized_visibility = "high"
@@ -20,14 +20,14 @@ set background=dark         " Assume a dark background
 "let g:solarized_termcolors = 16
 "colorscheme solarized
 
-colorscheme ingretu
+"colorscheme ingretu
 
 if !has('gui')
     set term=$TERM          " Make arrow and other keys work
 endif
 
 set shell=/bin/zsh			" Set default shell to zsh 
-filetype plugin indent on   " Automatically detect file types.
+filetype plugin indent off   " Automatically detect file types.
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
 set mousehide               " Hide the mouse cursor while typing
