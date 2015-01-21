@@ -24,7 +24,7 @@ defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
 # Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+#defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable opening and closing window animations
@@ -34,10 +34,10 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+#defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+#defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 # Save to disk (not to iCloud) by default
 #defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -188,8 +188,8 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 chflags nohidden ~/Library
 
 # Remove Dropbox’s green checkmark icons in Finder
-file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
-[ -e "${file}" ] && mv -f "${file}" "${file}.bak"
+#file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
+#[ -e "${file}" ] && mv -f "${file}" "${file}.bak"
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -283,8 +283,8 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use the Pro theme by default in Terminal.app
-defaults write com.apple.terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.terminal "Startup Window Settings" -string "Pro"
+#defaults write com.apple.terminal "Default Window Settings" -string "Pro"
+#defaults write com.apple.terminal "Startup Window Settings" -string "Pro"
 
 ###############################################################################
 # Time Machine                                                                #
@@ -301,7 +301,7 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 ###############################################################################
 
 # Enable the debug menu in Address Book
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
+#defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 defaults write com.apple.dashboard devmode -bool true
@@ -313,8 +313,8 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # Enable the debug menu in Disk Utility
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
+#defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+#defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ###############################################################################
 # Mac App Store                                                               #
@@ -324,7 +324,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 # Enable Debug Menu in the Mac App Store
-defaults write com.apple.appstore ShowDebugMenu -bool true
+#defaults write com.apple.appstore ShowDebugMenu -bool true
 
 ###############################################################################
 # Kill affected applications or restart the system                            #
