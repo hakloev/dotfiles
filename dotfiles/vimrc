@@ -10,7 +10,9 @@
 syntax enable
 set background=dark         " Assume a dark background
 
-colorscheme badwolf
+colorscheme smyck
+
+"colorscheme badwolf
 
 " Molokai
 "colorscheme molokai

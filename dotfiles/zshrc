@@ -34,10 +34,7 @@ EDITOR='vim'
 # OSX spesific things
 if [[ $(uname -s) == "Darwin" ]];
 then
-    export M2_HOME=/Users/hakloev/Downloads/apache-maven-3.2.3 
-    export M2=$M2_HOME/bin
-    export PATH=$M2:$PATH
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_75.jdk/Contents/Home/jre
     export PATH=$JAVA_HOME:$PATH
     export PATH=/usr/local/bin:$PATH # Fix for homebrew
 fi
