@@ -57,7 +57,7 @@ function main() {
         config_osx
     else
         echo "Bootstrapping $(uname -s)"
-        set_motd
+        #set_motd
         zsh_fix
     fi
 }
