@@ -35,7 +35,7 @@ EDITOR='vim'
 if [[ $(uname -s) == "Darwin" ]];
 then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_75.jdk/Contents/Home/jre
-    export PATH=$JAVA_HOME:$PATH
+    export PATH=$JAVA_HOME/bin:$PATH
     export PATH=/usr/local/bin:$PATH # Fix for homebrew
 fi
 

@@ -1,1 +1,3 @@
-/dotfiles/vim/.net*
+dotfiles/vim/.net*
+dotfiles/ssh/id*
+dotfiles/ssh/known_hosts

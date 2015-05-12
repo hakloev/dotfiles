@@ -1,0 +1,4 @@
+Host hakloev
+    HostName hakloev.no
+    Port 723
+    User root
