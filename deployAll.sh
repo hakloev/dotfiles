@@ -8,22 +8,17 @@ function deploy_dot_files() {
 function install_brew() {
     which -a brew &> /dev/null
     if [ $? != 0 ]; then
-        echo "Installing Homebrew"
+        echo "Installing Brew"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         brew doctor
     else 
-        echo "Homebrew already installed"
+        echo "Brew already installed"
     fi
 }
 
 function config_osx() {
     echo "Setting OS X spesific settings"
     source ~/git/unix-dot/osx_config
-}
-
-function set_motd() {
-    echo "Creaing motd"
-    curl --compressed "http://www.lemoda.net/games/figlet/figlet.cgi?text=$(hostname)&font=puffy&width=80" | $SUDO tee /etc/motd
 }
 
 function zsh_fix() {

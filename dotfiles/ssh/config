@@ -2,3 +2,9 @@ Host hakloev
     HostName hakloev.no
     Port 723
     User root
+
+Host github.com
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
+    HostName github.com
+    User git
+    IdentitiesOnly yes
