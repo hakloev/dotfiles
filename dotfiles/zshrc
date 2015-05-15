@@ -1,64 +1,13 @@
-# PATH TO  MY oh-my-zsh CONFIG.
-ZSH=$HOME/.oh-my-zsh
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# HISTORY SETTINGS
-HISTFILE=~/.zsh_history
-HISTSIZE=5000
-SAVEHIST=4500
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="pygmalion"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx tmux mosh web-search django pip python)
-
-source $ZSH/oh-my-zsh.sh
-
-# Universal aliases
-alias ipecho="curl ipecho.net/plain; echo"
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias caracal="mosh haakool@caracal.stud.ntnu.no -- sh -c 'exec zsh'"
-alias hakloev="mosh hakloev@hakloev.no"
-alias update_dotfiles="cd ~/git/unix-dot; git pull; cd ~"
-
-# Editor
-EDITOR='vim' 
-
-# OSX spesific things
-if [[ $(uname -s) == "Darwin" ]];
-then
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_75.jdk/Contents/Home/jre
-    export PATH=$JAVA_HOME/bin:$PATH
-    export PATH=/usr/local/bin:$PATH # Fix for homebrew
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Universal exports
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-#export TERM=xterm-256color
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin
-
-#Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=14
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# Customize to your needs...
