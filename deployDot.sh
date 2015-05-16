@@ -7,5 +7,7 @@ do
     ln -s ~/git/unix-dot/dotfiles/$FILE ~/.$FILE
     echo "Created symlink for $FILE"
 done
-    
+
+echo "################################"
 echo "All dotfiles symlinked"
+echo "################################"
