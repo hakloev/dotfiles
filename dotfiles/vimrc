@@ -67,8 +67,8 @@ set shiftwidth=4
 " I like 4 stops
 set tabstop=4
 
-" Spaces instead of tabs
-set expandtab
+" Tabs instead of spaces
+set noexpandtab
 
 " Always  set auto indenting on
 set autoindent
