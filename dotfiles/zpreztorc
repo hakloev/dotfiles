@@ -32,7 +32,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' 
+  'prompt' \
+  'python'
 
 #
 # Editor
@@ -86,7 +87,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'steeef'
-
+#zstyle ':prezto:module:prompt' theme 'paradox'
 #
 # Ruby
 #
@@ -154,4 +155,4 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'

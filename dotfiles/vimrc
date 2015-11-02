@@ -1,6 +1,6 @@
 "
 "File: .vimrc
-" Version: 1
+" Version: 0.1
 " Author: Håkon Løvdal
 " Created: 07 Dec 2013
 
@@ -68,7 +68,7 @@ set shiftwidth=4
 set tabstop=4
 
 " Tabs instead of spaces
-set noexpandtab
+"set noexpandtab
 
 " Always  set auto indenting on
 set autoindent
@@ -84,10 +84,6 @@ set showmatch
 
 " Turn of spell check
 set nospell
-
-nnoremap [ :tabnew<cr>
-nnoremap ' :tabnext<cr>
-nnoremap ; :tabprev<cr>
 
 " ========================================================== 
 " STATUSLINE
@@ -136,11 +132,25 @@ endif
 " KEY MAPPINGS
 
 " Bind norwegian letters for tab and split movement
-nnoremap å :tabnew<cr>
-nnoremap ø :tabprev<cr>
-nnoremap æ :tabnext<cr>
+
+"nnoremap å :tabnew<cr>
+"nnoremap ø :tabprev<cr>
+"nnoremap æ :tabnext<cr>
+
+nnoremap [ :tabnew<cr>
+nnoremap ' :tabnext<cr>
+nnoremap ; :tabprev<cr>
 
 " Pressing < or > will let you indent/unident selected lines
 
 vnoremap < <gv
 vnoremap > >gv
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'nvie/vim-flake8'
+Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/supertab'
+Plug 'Glench/Vim-Jinja2-Syntax'
+
+call plug#end()

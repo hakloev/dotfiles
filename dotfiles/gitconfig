@@ -1,7 +1,7 @@
 [user]
     user = hakloev
-    name = Håkon Ødegård Løvdal
-	email = hakloev@gmail.com
+	name = Håkon Ødegård Løvdal
+	email = me@hakloev.no
 [push]
 	default = matching
 [core]
