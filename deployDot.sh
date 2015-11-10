@@ -17,7 +17,7 @@ function deploy() {
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
 function deploy_ssh() {
 	if [ ! -d $HOME/.ssh ]; then
-		mkdir ~/.ssh
+		mkdir ~/.ssh/
 	fi
 
 	if [ -f $HOME/.ssh/config ]; then
