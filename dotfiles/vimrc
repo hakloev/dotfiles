@@ -1,5 +1,4 @@
-"
-"File: .vimrc
+" File: .vimrc
 " Version: 0.1
 " Author: Håkon Løvdal
 " Created: 07 Dec 2013
@@ -8,8 +7,9 @@
 " GENERAL
 
 syntax enable
-set background=dark
+
 colorscheme smyck
+set background=dark
 
 " Molokai
 "colorscheme molokai
@@ -152,5 +152,6 @@ Plug 'nvie/vim-flake8'
 Plug 'sheerun/vim-polyglot'
 Plug 'ervandew/supertab'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'tpope/vim-surround'
 
 call plug#end()

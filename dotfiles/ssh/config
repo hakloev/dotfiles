@@ -1,17 +1,1 @@
-Host hakloev
-    HostName hakloev.no
-    Port 723
-    User root
-
-Host vilje
-    HostName vilje.hpc.ntnu.no
-    User hakonol
-
-Host its015
-	HostName its-015-06.idi.ntnu.no
-	User haakool
-
-Host github.com
-    HostName github.com
-    User git
-    IdentitiesOnly yes
+/ssh/config

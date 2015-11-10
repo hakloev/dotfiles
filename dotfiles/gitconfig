@@ -5,7 +5,7 @@
 [push]
 	default = matching
 [core]
-	autocrlf = input
+	autocrlf = false
     excludesfile = ~/.gitexcludes
 	editor = vim
 [merge]
