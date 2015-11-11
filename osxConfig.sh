@@ -26,6 +26,19 @@ sudo nvram SystemAudioVolume=" "
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
+# Menu bar: hide the Time Machine, Volume, and User icons
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+    defaults write "${domain}" dontAutoLoad -array \
+        "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+        "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+        "/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+    "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
 # Menu bar: show remaining battery percentage (on pre-10.8); hide time
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.menuextra.battery ShowTime -string "NO"
@@ -375,16 +388,10 @@ defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.7
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
+for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+    "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
+    "Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+    "Transmission" "Twitter" "iCal"; do
+    killall "${app}" &> /dev/null
+done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-echo "To restart the system press [r] or to kill affected apps press [k]"
-
-read option
-
-if [ $option == "r" ]; then
-	sudo shutdown -r now
-elif [ $option == "k" ]; then
-	for app in "Address Book" "Contacts" "iCal" "Calendar" "Dock" "Finder" "Mail" \
-		"Safari" "iTunes" "SystemUIServer" "Terminal" "Twitter"; do
-		killall "$app" > /dev/null 2>&1
-	done
-fi
