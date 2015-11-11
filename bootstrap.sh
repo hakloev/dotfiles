@@ -13,7 +13,7 @@ brew update
 #while read in; do brew tap "$in"; done < Taps
 
 # Install brews
-brew install $(cat requirements/brew_pkg | grep -v "#")
+brew install $(cat requirements/brew_pkg.txt | grep -v "#")
 
 # Install casks
 #brew cask install $(cat Caskfile|grep -v "#")
@@ -22,6 +22,7 @@ brew install $(cat requirements/brew_pkg | grep -v "#")
 source 'dotfiles.sh'
 source 'osx_settings.sh'
 
+# Install pip packages
 pip3 install -r requirements/pip3.txt
 
 # Update OS X
