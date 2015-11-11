@@ -1,11 +1,7 @@
 cowsay
-figlet
 git
 git-lfs
-ipcalc
 maven
-ncdu
-nmap
 node
 postgresql
 pypy
@@ -13,7 +9,6 @@ pypy3
 python
 python3
 scala
-source-highlight
 sqlite
 mobile-shell
 tmux
