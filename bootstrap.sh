@@ -1,4 +1,5 @@
-zsh
+#!/bin/bash
+echo "... starting bootstrapping"
 
 # Clone and install Prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -25,5 +26,4 @@ source 'osx_settings.sh'
 # Install pip packages
 pip3 install -r requirements/pip3.txt
 
-# Update OS X
-sudo softwareupdate -i -a
+echo "... done bootstrapping"
