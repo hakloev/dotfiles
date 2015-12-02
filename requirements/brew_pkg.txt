@@ -1,3 +1,4 @@
+Caskroom/cask/java
 cowsay
 git
 git-lfs

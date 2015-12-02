@@ -10,14 +10,19 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Update Homebrew
 brew update
 
+echo "... before we continue, run 'brew bundle install' in the requirements folder"
+echo "... press enter to contine"
+read 
+
 # install brew taps, needs to be fixed properly later
 #while read in; do brew tap "$in"; done < Taps
 
 # Install brews
-brew install $(cat requirements/brew_pkg.txt | grep -v "#")
+#brew install $(cat requirements/brew_pkg.txt | grep -v "#")
 
 # Install casks
 #brew cask install $(cat Caskfile|grep -v "#")
+
 
 # Set standard settings
 source 'dotfiles.sh'

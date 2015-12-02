@@ -27,6 +27,7 @@ endif
 
 set shell=/bin/zsh			" Set default shell to zsh 
 filetype plugin indent off   " Automatically detect file types.
+filetype plugin on
 syntax on                   " Syntax highlighting
 set mouse=a                 " Automatically enable mouse usage
 set mousehide               " Hide the mouse cursor while typing
@@ -154,5 +155,6 @@ Plug 'ervandew/supertab'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-surround'
 Plug 'flazz/vim-colorschemes'
+Plug 'suan/vim-instant-markdown'
 
 call plug#end()
