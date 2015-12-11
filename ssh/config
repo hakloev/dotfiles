@@ -3,9 +3,9 @@ Host hakloev
     Port 723
     User hakloev
 
-Host bsdhakloev
-	HostName 178.62.222.14
-	Port 723
+Host hakloevbsd
+	HostName 188.166.93.132
+	Port 22
 	User hakloev
 
 Host github.com

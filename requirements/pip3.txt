@@ -7,5 +7,6 @@ flake8-quotes
 pep8-naming
 requests
 virtualenv
+virtualenvwrapper
 matplotlib
 markdown
