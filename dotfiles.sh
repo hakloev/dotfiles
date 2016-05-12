@@ -36,4 +36,4 @@ function install_vimplug() {
 
 deploy
 deploy_ssh
-install_vimplug
+# install_vimplug

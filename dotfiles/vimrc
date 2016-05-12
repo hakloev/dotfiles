@@ -1,160 +1,58 @@
-" File: .vimrc
-" Version: 0.1
-" Author: Håkon Løvdal
-" Created: 07 Dec 2013
-
-" ========================================================== 
-" GENERAL
-
-syntax enable
-
-colorscheme smyck
-set background=dark
-
-" Molokai
-"colorscheme molokai
-"let g:molokai_original = 1
-
-" Solarized 
-"let g:solarized_termcolors = 256
-"colorscheme solarized
-
-"colorscheme ingretu
-
-if !has('gui')
-    set term=$TERM          " Make arrow and other keys work
-endif
-
-set shell=/bin/zsh			" Set default shell to zsh 
-filetype plugin indent off   " Automatically detect file types.
-filetype plugin on
-syntax on                   " Syntax highlighting
-set mouse=a                 " Automatically enable mouse usage
-set mousehide               " Hide the mouse cursor while typing
-scriptencoding utf-8
-
-" Select when using the mouse
-set selectmode=mouse
-
-if has ('x') && has ('gui') " On Linux use + register for copy-paste
-    set clipboard=unnamedplus
-elseif has ('gui')          " On mac and Windows, use * register for copy-paste
-    set clipboard=unnamed
-endif
-
-" Do not keep a backup files 
-set nobackup
-set nowritebackup
-set noswapfile
-
-" Wildmeny for multiple alternatives
-set wildmenu
-
-" Display line numbers
-set number
-
-" Use Vim settings, rather then Vi settings (much better!).
-set nocompatible
-
-" Turn on the verboseness to see everything vim is doing.
-"set verbose=9
-
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-" Like every pro I use 4 spaces for indenting
-set shiftwidth=4
-
-" I like 4 stops
-set tabstop=4
-
-" Tabs instead of spaces
-"set noexpandtab
-
-" Always  set auto indenting on
-set autoindent
-
-" Display the current mode
-set showmode                   
-
-" Highlight current line
-"set cursorline   
-
-" Show matching brackets/parenthesis  
-set showmatch      
-
-" Turn of spell check
-set nospell
-
-" ========================================================== 
-" STATUSLINE
-
-" Fix the status line:    
-" Format markers:
-"   %< truncation point
-"   %n buffer number
-"   %f relative path to file
-"   %m modified flag [+] (modified), [-] (unmodifiable) or nothing
-"   %r readonly flag [RO]
-"   %y filetype [ruby]
-"   %= split point for left and right justification
-"   %-35. width specification
-"   %l current line number
-"   %L number of lines in buffer
-"   %c current column number
-"   %V current virtual column number (-n), if different from %c
-"   %P percentage through buffer
-"   %) end of width specification
-
-set statusline=%<\ %n:%f\ %y%m%r\ [%{strlen(&fenc)?&fenc:&enc}]%=%-35.(Line:\ %l\ of\ %L,\ Col:\ %c%V\ (%P)%)
-
-set laststatus=2
-
-" OmniFunc 
-
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-" Change highlighting based on mode
-if version >= 700
-  highlight statusLine cterm=bold ctermfg=black ctermbg=white                   "Initial
-  au InsertLeave * highlight StatusLine cterm=bold ctermfg=black ctermbg=white  "Visual Mode
-  au InsertEnter * highlight StatusLine cterm=bold ctermfg=black ctermbg=grey    "Insert Mode
-endif
-
-" ========================================================== 
-" COMMANDS
-
-" COMMANDS COMES HERE
-
-" ========================================================== 
-" KEY MAPPINGS
-
-" Bind norwegian letters for tab and split movement
-
-"nnoremap å :tabnew<cr>
-"nnoremap ø :tabprev<cr>
-"nnoremap æ :tabnext<cr>
-
-nnoremap [ :tabnew<cr>
-nnoremap ' :tabnext<cr>
-nnoremap ; :tabprev<cr>
-
-" Pressing < or > will let you indent/unident selected lines
-
-vnoremap < <gv
-vnoremap > >gv
-
 call plug#begin('~/.vim/plugged')
 
-Plug 'nvie/vim-flake8'
-Plug 'sheerun/vim-polyglot'
-Plug 'ervandew/supertab'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'tpope/vim-surround'
-Plug 'flazz/vim-colorschemes'
-Plug 'suan/vim-instant-markdown'
+Plug 'scrooloose/nerdcommenter'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
+
+
+set nocompatible
+
+filetype on
+filetype indent on
+syntax on
+colorscheme Tomorrow-Night
+
+set backspace=indent,eol,start
+
+set guifont=Menlo\ Regular:h14
+
+set number
+set hidden
+set history=100
+
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+set showmatch
+set showmode
+set list
+set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮  " ... but only show tabs and trailing whitespace
+
+set noshowmode
+set laststatus=2
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+set hlsearch
+set ignorecase
+set smartcase
+
+nnoremap <Leader><Leader> :e#<CR>
+
+let mapleader="\<Space>"
+map <leader>s :source ~/.vimrc<CR>
+
+let g:NERDTreeMapActivateNode='<right>'
+let g:NERDTreeShowHidden=0
+nmap <leader>n :NERDTreeToggle<CR>
+let g:NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let g:NERDTreeWinSize=31
+
+let g:gitgutter_sign_column_always=1
