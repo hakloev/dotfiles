@@ -16,7 +16,10 @@ set nocompatible "Use Vim settings, rather than Vi settings
 filetype on
 filetype indent on
 syntax on
+"{ Colorscheme
+set background=dark
 colorscheme Tomorrow-Night
+"}
 
 set number "Show line numbers
 set hidden "Hide, not close buffers
