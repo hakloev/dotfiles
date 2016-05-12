@@ -1,3 +1,4 @@
+"{ Plugins from Vim-Plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdcommenter'
@@ -5,54 +6,67 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-markdown'
 
 call plug#end()
+"}
 
-
-set nocompatible
+set nocompatible "Use Vim settings, rather than Vi settings
 
 filetype on
 filetype indent on
 syntax on
 colorscheme Tomorrow-Night
 
-set backspace=indent,eol,start
+set number "Show line numbers
+set hidden "Hide, not close buffers
+set history=100 "More in memory for speed increase
+set showmatch "Show matching brackets/parenthesis
+set showmode "Show current mode
+set list "Show trailing charachters
+set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮  " ... but only show tabs and trailing whitespace
+set backspace=indent,eol,start "Allow backspacing over everything in insert mode
+set noshowmode "Remove insert/visual etc from status line, since I use lightline
+set laststatus=2
 
-set guifont=Menlo\ Regular:h14
+"{ Encoding
+set encoding=utf-8
+"}
 
-set number
-set hidden
-set history=100
-
+"{ Indenting
 set nowrap
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 "I like 2 stops
+set shiftwidth=2 "Use spaces for indenting
 set expandtab
 set smartindent
 set autoindent
-set showmatch
-set showmode
-set list
-set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮  " ... but only show tabs and trailing whitespace
+"}
 
-set noshowmode
-set laststatus=2
+"{ Searching
+set hlsearch "Highlight words when searching
+set ignorecase "Ignore cases when searching
+set smartcase "Don't ignore case when pattern contains upper case
+"}
 
+"Remove trailing whitespace on close
 autocmd BufWritePre * :%s/\s\+$//e
 
-set hlsearch
-set ignorecase
-set smartcase
-
-nnoremap <Leader><Leader> :e#<CR>
-
+"Space as leader
 let mapleader="\<Space>"
+"Open previous file
+nnoremap <Leader><Leader> :e#<CR>
+"Reload config
 map <leader>s :source ~/.vimrc<CR>
+"Toggle NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
 
+"{ NerdTree
 let g:NERDTreeMapActivateNode='<right>'
 let g:NERDTreeShowHidden=0
-nmap <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
-let g:NERDTreeWinSize=31
+let g:NERDTreeWinSize=30
+"}
 
+"{ Git Gutter
 let g:gitgutter_sign_column_always=1
+"}
