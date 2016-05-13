@@ -7,6 +7,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-markdown'
+Plug 'junegunn/seoul256.vim' "Copy from plugged to colors
+Plug 'hukl/Smyck-Color-Scheme'
 
 call plug#end()
 "}
@@ -17,8 +19,11 @@ filetype on
 filetype indent on
 syntax on
 "{ Colorscheme
+"let g:seoul256_background = 233 "Darkest possible background, must set before load of colorscheme
+"colorscheme seoul256
+"colorscheme molokai
+colorscheme smyck
 set background=dark
-colorscheme Tomorrow-Night
 "}
 
 set number "Show line numbers

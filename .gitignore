@@ -1,5 +1,6 @@
 dotfiles/vim/bundle/*
 dotfiles/vim/plugged/*
+dotfiles/vim/colors/*
 dotfiles/ssh/id*
 dotfiles/ssh/known_hosts
 dotfiles/ssh/github*
