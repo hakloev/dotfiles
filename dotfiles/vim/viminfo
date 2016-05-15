@@ -24,20 +24,138 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
+""1	LINE	0
+	        echo "is there"
 
 # File marks:
-'0  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
-'1  6  18  ~/git/internal/unix-dot/.gitignore
+'0  24  2  ~/git/internal/unix-dot/dotfiles.sh
+'1  23  5  ~/git/internal/unix-dot/dotfiles.sh
+'2  24  8  ~/git/internal/unix-dot/dotfiles.sh
+'3  1  0  ~/.ssh/config
+'4  26  4  ~/git/internal/unix-dot/dotfiles.sh
+'5  25  16  ~/git/internal/unix-dot/dotfiles.sh
+'6  10  0  ~/git/internal/unix-dot/NERD_tree_1
+'7  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+'8  6  18  ~/git/internal/unix-dot/.gitignore
 
 # Jumplist (newest first):
+-'  24  2  ~/git/internal/unix-dot/dotfiles.sh
+-'  1  0  ~/git/internal/unix-dot/dotfiles.sh
+-'  23  5  ~/git/internal/unix-dot/dotfiles.sh
+-'  1  0  ~/.ssh/config
+-'  26  4  ~/git/internal/unix-dot/dotfiles.sh
+-'  25  16  ~/git/internal/unix-dot/dotfiles.sh
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
 -'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
 -'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
 -'  6  18  ~/git/internal/unix-dot/.gitignore
 -'  1  0  ~/git/internal/unix-dot/.gitignore
 -'  6  18  ~/git/internal/unix-dot/.gitignore
 -'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  1  0  ~/git/internal/unix-dot/NERD_tree_1
+-'  17  2  ~/git/internal/unix-dot/NERD_tree_1
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  7  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  1  0  ~/git/internal/unix-dot/dotfiles/vim/viminfo
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  6  18  ~/git/internal/unix-dot/.gitignore
+-'  1  0  ~/git/internal/unix-dot/.gitignore
+-'  10  0  ~/git/internal/unix-dot/NERD_tree_1
 
 # History of marks within files (newest to oldest):
+
+> ~/git/internal/unix-dot/dotfiles.sh
+	"	24	2
+	^	23	6
+	.	24	0
+	+	24	7
+	+	24	22
+	+	24	9
+	+	23	5
+	+	24	0
+
+> ~/.ssh/config
+	"	1	0
+
+> ~/git/internal/unix-dot/NERD_tree_1
+	"	10	0
+	.	1	0
+	+	1	0
 
 > ~/git/internal/unix-dot/dotfiles/vim/viminfo
 	"	7	0

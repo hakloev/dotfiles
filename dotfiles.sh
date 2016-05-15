@@ -20,8 +20,8 @@ function deploy_ssh() {
 		mkdir ~/.ssh/
 	fi
 
-	if [ -f $HOME/.ssh/config ]; then
-		rm ~/.ssh/config
+	if [ -f "$HOME/.ssh/config" ]; then
+		rm -f ~/.ssh/config
 		ln -s $ORIGIN/ssh/config ~/.ssh/config
 	else
 		ln -s $ORIGIN/ssh/config ~/.ssh/config
