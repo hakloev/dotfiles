@@ -58,6 +58,8 @@ set smartcase "Don't ignore case when pattern contains upper case
 
 "Remove trailing whitespace on close
 autocmd BufWritePre * :%s/\s\+$//e
+"Force tabs when Makefiles
+autocmd FileType make setlocal noexpandtab
 
 "Space as leader
 let mapleader="\<Space>"

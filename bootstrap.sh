@@ -12,7 +12,7 @@ brew update
 
 echo "... before we continue, run 'brew bundle install' in the requirements folder"
 echo "... press enter to contine"
-read 
+read
 
 # install brew taps, needs to be fixed properly later
 #while read in; do brew tap "$in"; done < Taps

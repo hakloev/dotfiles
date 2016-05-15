@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORIGIN=~/git/unix-dot
+ORIGIN=~/git/internal/unix-dot
 
 function deploy() {
 	ls -1 $ORIGIN/dotfiles/ | while read FILE;
