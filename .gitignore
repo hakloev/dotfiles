@@ -1,3 +1,4 @@
+dotfiles/vim/viminfo
 dotfiles/vim/bundle/*
 dotfiles/vim/plugged/*
 dotfiles/vim/colors/*
