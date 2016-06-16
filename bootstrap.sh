@@ -1,34 +1,32 @@
-#!/bin/bash
-echo "... starting bootstrapping"
+echo "[INFO] Starting bootstraping"
 
-# Clone and install Prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# Check for prezto
+if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+    echo "[INFO] Installing prezto"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+else
+    echo "[INFO] prezto present, skipping install"
+fi
 
-# Install Homebrew (http://brew.sh)
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Check for homebrew
+if test ! $(which brew); then
+    echo "[INFO] Installing homebrew"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    echo "[INFO] homebrew present, skipping install"
+fi
 
-# Update Homebrew
-brew update
-
-echo "... before we continue, run 'brew bundle install' in the requirements folder"
-echo "... press enter to contine"
-read
-
-# install brew taps, needs to be fixed properly later
-#while read in; do brew tap "$in"; done < Taps
-
-# Install brews
-#brew install $(cat requirements/brew_pkg.txt | grep -v "#")
-
-# Install casks
-#brew cask install $(cat Caskfile|grep -v "#")
-
-
-# Set standard settings
 source 'dotfiles.sh'
 source 'osx_settings.sh'
 
-# Install pip packages
+# Update homebrew
+brew update
+
+echo "[WARNING] Before we continue, run 'brew bundle install' in './requirements'"
+echo "[WARNING] Press enter to continue"
+read
+
+echo "[INFO] pip3 requirements"
 pip3 install -r requirements/pip3.txt
 
-echo "... done bootstrapping"
+echo "[INFO] Done bootstraping"

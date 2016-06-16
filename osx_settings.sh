@@ -2,7 +2,10 @@
 
 # Based upon https://github.com/mourawaldson/dotfiles/raw/master/.osx, 13.10.2014
 
-HOSTNAME="saria"
+echo "[WARNING] Enter your preferred hostname: "
+read -p "Default (saria)" HOSTNAME
+HOSTNAME=${HOSTNAME:=saria}
+echo "[INFO] Chosen hostname: $HOSTNAME"
 
 # Ask for the administrator password upfront
 sudo -v
