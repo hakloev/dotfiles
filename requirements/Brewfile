@@ -34,6 +34,7 @@ brew 'wget'
 
 brew 'caskroom/cask/brew-cask'
 
+cask 'iterm2-beta'
 cask 'atom'
 cask 'visual-studio-code'
 cask 'intellij-idea'
@@ -41,6 +42,7 @@ cask 'pycharm'
 cask 'clion'
 cask 'github-desktop'
 cask 'docker'
+cask 'virtualbox'
 
 cask 'firefox'
 cask 'google-chrome'
