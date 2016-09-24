@@ -10,23 +10,41 @@ fi
 
 # Check for homebrew
 if test ! $(which brew); then
-    echo "[INFO] Installing homebrew"
+    echo "[INFO] Installing Homebrew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-    echo "[INFO] homebrew present, skipping install"
+    echo "[INFO] Homebrew present, skipping install"
 fi
 
-source 'dotfiles.sh'
-source 'osx_settings.sh'
+read -r -p "[INFO] Link dotfiles? [Y/n] " -n 1 choice
+echo
+case $choice in
+    [yY])
+        echo "[INFO] Linking dotfiles"
+        source 'dotfiles.sh'
+        ;;
+    *)
+        echo "[INFO] Skipping dotfiles"
+        ;;
+esac
 
 # Update homebrew
+echo "[INFO] Updating brew"
 brew update
 
 echo "[WARNING] Before we continue, run 'brew bundle install' in './requirements'"
-echo "[WARNING] Press enter to continue"
-read
+read -r -p "[WARNING] Press enter to continue " -n 1
 
-echo "[INFO] pip3 requirements"
-pip3 install -r requirements/pip3.txt
+read -r -p "[INFO] Install pip3 requirements? [Y/n] " -n 1 choice
+echo
+case $choice in
+    [yY])
+        echo "[INFO] Installing pip3 requirements"
+        pip3 install -r requirements/pip3.txt
+        ;;
+    *)
+        echo "[INFO] Skipping pip3 requirements"
+        ;;
+esac
 
 echo "[INFO] Done bootstraping"

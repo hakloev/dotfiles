@@ -3,10 +3,10 @@ Host hakloev
     Port 723
     User hakloev
 
-Host hakloevbsd
-	HostName 188.166.93.132
+Host drone
+	HostName 178.62.228.131
 	Port 22
-	User hakloev
+	User root
 
 Host github.com
     HostName github.com
