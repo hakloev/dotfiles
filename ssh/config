@@ -9,9 +9,9 @@ Host learnpython
     User root
 
 Host drone
-	HostName 178.62.228.131
-	Port 22
-	User root
+    HostName 178.62.228.131
+    Port 22
+    User root
 
 Host github.com
     HostName github.com
