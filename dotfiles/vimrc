@@ -1,3 +1,9 @@
+"{ Encoding
+scriptencoding utf-8
+set encoding=utf-8
+"}
+
+
 "{ Plugins from Vim-Plug
 call plug#begin('~/.vim/plugged')
 
@@ -32,14 +38,11 @@ set history=100 "More in memory for speed increase
 set showmatch "Show matching brackets/parenthesis
 set showmode "Show current mode
 set list "Show trailing charachters
-set listchars=tab:│\ ,trail:•,extends:❯,precedes:❮  " ... but only show tabs and trailing whitespace
+set listchars=tab:\|\ ,trail:•,extends:❯,precedes:❮ " ... but only show tabs and trailing whitespace
 set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 set noshowmode "Remove insert/visual etc from status line, since I use lightline
 set laststatus=2
 
-"{ Encoding
-set encoding=utf-8
-"}
 
 "{ Backup and swap, taken from github.com/ingara/dotfiles/vimrc
 "Save your backups to a less annoying place than the current directory.
