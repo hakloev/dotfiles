@@ -3,6 +3,11 @@ Host hakloev
     Port 723
     User hakloev
 
+Host learnpython
+    HostName 51.15.46.97
+    Port 22
+    User root
+
 Host drone
 	HostName 178.62.228.131
 	Port 22

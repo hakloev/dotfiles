@@ -8,9 +8,8 @@ function deploy() {
 	do
 		rm -r ~/.$FILE &> /dev/null
 		ln -s $ORIGIN/dotfiles/$FILE ~/.$FILE
-		echo "[INFO] Created symlink for $FILE"
+		echo "Created symlink for $FILE"
 	done
-
 }
 
 # The two following functions is taken from @kradalby's deploy.sh

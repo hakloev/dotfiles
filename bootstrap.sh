@@ -1,50 +1,64 @@
-echo "[INFO] Starting bootstraping"
+# Taken from github.com/tmn/dotfiles/scripts/bootstrap
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+
+info "Bootstraping started"
+
+read -r -p "Link dotfiles? [yY/n] " -n 1 choice
+echo
+case $choice in
+    [yY])
+        info "Linking dotfiles"
+        sh dotfiles.sh
+        ;;
+    *)
+        info "Skipping dotfiles"
+        ;;
+esac
+
+
+if [  "$(uname -s)" == "Darwin" ]; then
+	info "Bootstraping macOS"
+	sh macos.sh
+	if [ $? -eq 0 ]; then
+        success "macOS dependencies installed"
+    else
+        fail "Failed to install macOS dependencies"
+    fi
+fi
 
 # Check for prezto
 if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
-    echo "[INFO] Installing prezto"
+    info "Cloning ZSH Prezto"
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+	success "Done cloning ZSH Prezto"
 else
-    echo "[INFO] prezto present, skipping install"
+    info "ZSH Prezto present, skipping cloning"
 fi
 
-# Check for homebrew
-if test ! $(which brew); then
-    echo "[INFO] Installing Homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-    echo "[INFO] Homebrew present, skipping install"
-fi
-
-read -r -p "[INFO] Link dotfiles? [Y/n] " -n 1 choice
+read -r -p "Install pip3 requirements? [yY/n] " -n 1 choice
 echo
 case $choice in
     [yY])
-        echo "[INFO] Linking dotfiles"
-        source 'dotfiles.sh'
-        ;;
-    *)
-        echo "[INFO] Skipping dotfiles"
-        ;;
-esac
-
-# Update homebrew
-echo "[INFO] Updating brew"
-brew update
-
-echo "[WARNING] Before we continue, run 'brew bundle install' in './requirements'"
-read -r -p "[WARNING] Press enter to continue " -n 1
-
-read -r -p "[INFO] Install pip3 requirements? [Y/n] " -n 1 choice
-echo
-case $choice in
-    [yY])
-        echo "[INFO] Installing pip3 requirements"
+        info "Installing pip3 requirements"
         pip3 install -r requirements/pip3.txt
+		success "Done installing pip3 requirements"
         ;;
     *)
-        echo "[INFO] Skipping pip3 requirements"
+        info "Skipping pip3 requirements"
         ;;
 esac
 
-echo "[INFO] Done bootstraping"
+success "Done bootstraping"
