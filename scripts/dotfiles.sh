@@ -3,11 +3,11 @@
 ORIGIN=~/git/internal/unix-dot
 
 function deploy() {
-	ls -1 $ORIGIN/dotfiles/ | while read FILE;
+	ls -1 $ORIGIN/rc/ | while read FILE;
 
 	do
 		rm -r ~/.$FILE &> /dev/null
-		ln -s $ORIGIN/dotfiles/$FILE ~/.$FILE
+		ln -s $ORIGIN/rc/$FILE ~/.$FILE
 		echo "Created symlink for $FILE"
 	done
 }
@@ -27,12 +27,5 @@ function deploy_ssh() {
 	fi
 }
 
-function install_vimplug() {
-	mkdir -p ~/.vim/autoload
-	curl --silent -fLo ~/.vim/autoload/plug.vim \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
-
 deploy
 deploy_ssh
-# install_vimplug
