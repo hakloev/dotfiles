@@ -15,10 +15,10 @@ cask 'virtualbox'
 #cask 'clion'
 #cask 'github-desktop'
 
-#cask 'firefox'
-#cask 'opera'
 cask 'google-chrome'
 cask 'vivaldi'
+#cask 'firefox'
+#cask 'opera'
 #cask 'microsoft-office'
 
 cask 'qlcolorcode'
