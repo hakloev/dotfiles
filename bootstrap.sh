@@ -14,14 +14,12 @@ fail () {
 }
 
 
-info "Bootstraping started"
-
 read -r -p "Link dotfiles? [yY/n] " -n 1 choice
 echo
 case $choice in
     [yY])
-        info "Linking dotfiles"
-        sh dotfiles.sh
+        echo "Linking dotfiles"
+        sh scripts/dotfiles.sh
         ;;
     *)
         info "Skipping dotfiles"
@@ -30,29 +28,23 @@ esac
 
 
 if [  "$(uname -s)" == "Darwin" ]; then
-	info "Bootstraping macOS"
-	sh macos.sh
+	echo "Bootstraping macOS"
+	sh scripts/macos.sh
 	if [ $? -eq 0 ]; then
         success "macOS dependencies installed"
+        info "Remember to run 'brew bundle install' in './requirements' to install casks"
+        read -r -p "Press enter to continue " -n 1
     else
         fail "Failed to install macOS dependencies"
     fi
 fi
 
-# Check for prezto
-if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
-    info "Cloning ZSH Prezto"
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-	success "Done cloning ZSH Prezto"
-else
-    info "ZSH Prezto present, skipping cloning"
-fi
 
 read -r -p "Install pip3 requirements? [yY/n] " -n 1 choice
 echo
 case $choice in
     [yY])
-        info "Installing pip3 requirements"
+        echo "Installing pip3 requirements"
         pip3 install -r requirements/pip3.txt
 		success "Done installing pip3 requirements"
         ;;
