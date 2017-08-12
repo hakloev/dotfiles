@@ -3,32 +3,11 @@ scriptencoding utf-8
 set encoding=utf-8
 "}
 
-
-"{ Plugins from Vim-Plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdcommenter'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-markdown'
-Plug 'junegunn/seoul256.vim' "Copy from plugged to colors
-Plug 'hukl/Smyck-Color-Scheme'
-
-call plug#end()
-"}
-
-set nocompatible "Use Vim settings, rather than Vi settings
-
 filetype on
 filetype indent on
 syntax on
+
 "{ Colorscheme
-"let g:seoul256_background = 233 "Darkest possible background, must set before load of colorscheme
-"colorscheme seoul256
-"colorscheme molokai
-colorscheme smyck
 set background=dark
 "}
 
@@ -43,53 +22,10 @@ set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 set noshowmode "Remove insert/visual etc from status line, since I use lightline
 set laststatus=2
 
-
-"{ Backup and swap, taken from github.com/ingara/dotfiles/vimrc
-"Save your backups to a less annoying place than the current directory.
-"If you have .vim-backup in the current directory, it'll use that.
-"Otherwise it saves it to ~/.vim/backup or . if all else fails.
-if isdirectory($HOME . '/.vim/backup') == 0
-  :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
-endif
-set backupdir-=.
-set backupdir+=.
-set backupdir-=~/
-set backupdir^=~/.vim/backup/
-set backupdir^=./.vim-backup/
-set backup
-
-"Save your swp files to a less annoying place than the current directory.
-"If you have .vim-swap in the current directory, it'll use that.
-"Otherwise it saves it to ~/.vim/swap, ~/tmp or .
-if isdirectory($HOME . '/.vim/swap') == 0
-  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
-endif
-set directory=./.vim-swap//
-set directory+=~/.vim/swap//
-set directory+=~/tmp//
-set directory+=.
-
-" viminfo stores the the state of your previous editing session
-set viminfo+=n~/.vim/viminfo
-
-if exists("+undofile")
-  "undofile - This allows you to use undos after exiting and restarting
-  "This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
-  ":help undo-persistence
-  "This is only present in 7.3+
-  if isdirectory($HOME . '/.vim/undo') == 0
-    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
-  endif
-  set undodir=./.vim-undo//
-  set undodir+=~/.vim/undo//
-  set undofile
-endif
-"}
-
 "{ Indenting
 set nowrap
-set tabstop=4 "I like 4 stops, for python
-set shiftwidth=4 "Use spaces for indenting
+set tabstop=2 "I like 4 stops, for Python
+set shiftwidth=2 "Use spaces for indenting
 set expandtab
 set smartindent
 set autoindent
@@ -112,16 +48,3 @@ let mapleader="\<Space>"
 nnoremap <Leader><Leader> :e#<CR>
 "Reload config
 map <leader>s :source ~/.vimrc<CR>
-"Toggle NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
-
-"{ NerdTree
-let g:NERDTreeMapActivateNode='<right>'
-let g:NERDTreeShowHidden=0
-let g:NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
-let g:NERDTreeWinSize=30
-"}
-
-"{ Git Gutter
-let g:gitgutter_sign_column_always=1
-"}
