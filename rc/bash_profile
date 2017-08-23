@@ -3,3 +3,12 @@ parse_git_branch() {
 }
 
 PS1="\[\e[0;32m\]\u@\h\[\e[0m\]:\[\e[0;33m\]\w\[\e[0m\]\$(parse_git_branch)\n\[\e[0;31m\]→\[\e[0m\] "
+
+# EXPORT
+
+## NSB
+# TODO: Import NSB specific files here
+
+export GOPATH=/Users/hakonlovdal/.go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
