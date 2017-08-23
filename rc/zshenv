@@ -1,0 +1,30 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export EDITOR="vim"
+export HISTSIZE=1000000
+export HISTFILE="$HOME/.zsh_history"
+
+# EXPORT
+export GOPATH="$HOME/.go"
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
+
+export M2_REPO="$HOME/.m2/repository"
+
+# Export NSB specific exports if the file exists
+if [ -f ~/.nsbrc ]; then
+  source ~/.nsbrc
+fi

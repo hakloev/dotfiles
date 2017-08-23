@@ -12,9 +12,5 @@ else
 fi
 
 # Update homebrew
-brew update
-brew upgrade
 sh requirements/brew.sh
 
-echo "Before we continue, run 'brew bundle install' in './requirements'"
-read -r -p "Press enter to continue " -n 1
