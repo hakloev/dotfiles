@@ -3,6 +3,7 @@ scriptencoding utf-8
 set encoding=utf-8
 "}
 
+set nocompatible "Use Vim settings, rather than Vi settings
 filetype on
 filetype indent on
 syntax on
