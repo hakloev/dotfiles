@@ -13,7 +13,9 @@ fi
 # Customize to your needs..
 alias ed25519key='ssh-keygen -t ed25519 -o -a 100'
 
-alias mci='mvn clean install'
-alias msb='mvn spring-boot:run'
+alias mcinst='mvn clean install'
+alias msboot='mvn spring-boot:run'
+alias mrpre='mvn release:prepare'
+alias mrper='mvn release:perform'
 
 alias st="open -a Sublime\ Text.app $1"
