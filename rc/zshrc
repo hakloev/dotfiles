@@ -19,3 +19,5 @@ alias mrpre='mvn release:prepare'
 alias mrper='mvn release:perform'
 
 alias st="open -a Sublime\ Text.app $1"
+
+alias weather='curl http://wttr.in/oslo'

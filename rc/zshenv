@@ -14,8 +14,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export EDITOR="vim"
-export HISTSIZE=1000000
+export HISTSIZE=1000000 # Set history size
+export SAVEHIST=1000000 # Save history after logout
 export HISTFILE="$HOME/.zsh_history"
+
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
 
 # EXPORT
 export GOPATH="$HOME/.go"
