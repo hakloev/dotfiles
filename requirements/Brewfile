@@ -2,7 +2,7 @@ cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/homebrew-versions'
 tap 'homebrew/bundle'
-cask 'java' # Must be added early on
+cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
 
 
 cask 'iterm2'
