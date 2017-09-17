@@ -24,3 +24,12 @@ alias mrper='mvn release:perform'
 alias st="open -a Sublime\ Text.app $1"
 
 alias weather='curl http://wttr.in/oslo'
+
+# Personal shell functions
+if [[ "$OSTYPE" == darwin* ]] then
+  function sethostname () {
+    sudo scutil --set ComputerName $1
+    sudo scutil --set LocalHostName $1
+    sudo scutil --set HostName $1
+  }
+fi
