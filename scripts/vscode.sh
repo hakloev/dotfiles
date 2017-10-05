@@ -2,7 +2,6 @@
 
 extensions=(
   "EditorConfig.EditorConfig"
-  "abadi199.elm-format"
   "dbaeumer.vscode-eslint"
   "sbrink.elm"
 )
