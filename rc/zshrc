@@ -10,9 +10,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Set to false to avoid auto-completion bug that eats lines in the shell
-export COMPLETION_WAITING_DOTS="false"
-
 # Customize to your needs..
 alias ed25519key='ssh-keygen -t ed25519 -o -a 100'
 
