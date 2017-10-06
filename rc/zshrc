@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Export zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # Customize to your needs..
 alias ed25519key='ssh-keygen -t ed25519 -o -a 100'
 
