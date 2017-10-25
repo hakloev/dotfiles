@@ -19,5 +19,6 @@ brew install python3
 brew install tree
 brew install unrar
 brew install vim
+brew install gpg
 
 brew cleanup
