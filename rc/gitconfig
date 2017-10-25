@@ -12,6 +12,7 @@
   autocrlf = false
   pager = less -FXRS -x2 # Two-spaces as tabs
   excludesfile = ~/.gitexcludes
+  ignorecase = false
   editor = vim
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line

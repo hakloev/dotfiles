@@ -5,6 +5,8 @@ brew update
 brew upgrade
 
 echo "Install essentials from Brew"
+brew install zsh
+brew install zsh-completions
 brew install wget
 brew install git
 brew install fish

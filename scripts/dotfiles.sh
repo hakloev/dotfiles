@@ -3,8 +3,7 @@
 ORIGIN=~/git/internal/dotfiles
 
 function deploy() {
-	ls -1 $ORIGIN/rc/ | while read FILE;
-
+	ls -1 $ORIGIN/rc/ | while read -r FILE;
 	do
 		rm -r ~/.$FILE &> /dev/null
 		ln -s $ORIGIN/rc/$FILE ~/.$FILE
