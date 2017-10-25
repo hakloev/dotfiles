@@ -1,7 +1,8 @@
 [user]
   user = hakloev
   name = Håkon Ødegård Løvdal
-  email = me@hakloev.no
+  email = post@hakloev.no
+  signingkey = 3EDCA56D
 [color]
   diff = auto
   status = always
@@ -45,3 +46,7 @@
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
