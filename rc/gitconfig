@@ -2,7 +2,7 @@
   user = hakloev
   name = Håkon Ødegård Løvdal
   email = post@hakloev.no
-  signingkey = 3EDCA56D
+#  signingkey = 3EDCA56D
 [color]
   diff = auto
   status = always
@@ -48,6 +48,6 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [commit]
-	gpgsign = true
+#	gpgsign = true
 [gpg]
-	program = /usr/local/bin/gpg
+#	program = /usr/local/bin/gpg
