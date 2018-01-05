@@ -1,3 +1,7 @@
+Host github.com
+  HostName github.com
+  AddKeysToAgent yes
+
 Host hakloev
     HostName hakloev.no
     Port 723
