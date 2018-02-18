@@ -35,17 +35,18 @@
   whitespace = fix
 [alias]
    # View the current working tree status using the short format
-  st = status -s
-  ci = commit
+  s = status -s
+  c = commit
+  d = diff
+  wd = diff \n--color-words
   co = checkout
   w = whatchanged --oneline
   unstage = reset HEAD --
   uncommit = reset --soft HEAD^
-  wdiff = diff \n--color-words
 	# Clone a repository including all submodules
 	cl = clone --recursive
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [commit]
 #	gpgsign = true
