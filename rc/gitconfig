@@ -2,7 +2,6 @@
   user = hakloev
   name = Håkon Ødegård Løvdal
   email = post@hakloev.no
-#  signingkey = 3EDCA56D
 [color]
   diff = auto
   status = always
@@ -34,7 +33,7 @@
 [apply]
   whitespace = fix
 [alias]
-   # View the current working tree status using the short format
+  # View the current working tree status using the short format
   s = status -s
   c = commit
   d = diff
@@ -43,12 +42,8 @@
   w = whatchanged --oneline
   unstage = reset HEAD --
   uncommit = reset --soft HEAD^
-	# Clone a repository including all submodules
-	cl = clone --recursive
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
+  # Clone a repository including all submodules
+  cl = clone --recursive
+  # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
-[commit]
-#	gpgsign = true
-[gpg]
-#	program = /usr/local/bin/gpg
