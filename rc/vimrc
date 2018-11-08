@@ -1,3 +1,20 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomasr/molokai'
+
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'junegunn/rainbow_parentheses.vim'
+
+Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'elzr/vim-json', {'for' : 'json'}
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
+
 "{ Encoding
 scriptencoding utf-8
 set encoding=utf-8
@@ -10,6 +27,7 @@ syntax on
 
 "{ Colorscheme
 set background=dark
+colorscheme molokai
 "}
 
 set number "Show line numbers
@@ -30,6 +48,7 @@ set shiftwidth=2 "Use spaces for indenting
 set expandtab
 set smartindent
 set autoindent
+set textwidth=120
 "}
 
 "{ Searching
@@ -49,3 +68,5 @@ let mapleader="\<Space>"
 nnoremap <Leader><Leader> :e#<CR>
 "Reload config
 map <leader>s :source ~/.vimrc<CR>
+
+nnoremap <C-n> :NERDTreeToggle<cr>
