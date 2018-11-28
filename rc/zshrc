@@ -13,10 +13,10 @@ fi
 # Customize to your needs..
 alias ed25519key='ssh-keygen -t ed25519 -o -a 100'
 
-alias mcinst='mvn clean install'
-alias msboot='mvn spring-boot:run'
-alias mrpre='mvn release:prepare'
-alias mrper='mvn release:perform'
+alias mci='mvn clean install'
+alias msb='mvn spring-boot:run'
+alias mrpr='mvn release:prepare'
+alias mrpe='mvn release:perform'
 
 alias st="open -a Sublime\ Text.app $1"
 
@@ -30,5 +30,29 @@ if [[ "$OSTYPE" == darwin* ]] then
     sudo scutil --set HostName $1
   }
 fi
+
+# FZF
+fzf_git_log() {
+    local commits=$(
+      git l --color=always "$@" |
+        fzf --ansi --no-sort --height 100% \
+            --preview "git show --color=always {2}"
+      )
+    if [ -n "$commits" ]; then
+        local hashes=$(printf "$commits" | cut -d' ' -f2 | tr '\n' ' ')
+        git show $hashes
+    fi
+}
+
+alias gl='fzf_git_log'
+
+fzf_git_add() {
+    local files=$(git ls-files --modified | fzf --ansi)
+    if [ -n "$files" ]; then
+        git add --verbose $files
+    fi
+}
+
+alias ga='fzf_git_add'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
