@@ -1,16 +1,16 @@
 [user]
   user = hakloev
-  name = Håkon Ødegård Løvdal
-  email = post@hakloev.no
+	name = Håkon Ødegård Løvdal
+	email = post@hakloev.no
 [color]
-  diff = auto
+  diff = always
   status = always
-  branch = auto
+  branch = always
   ui = true
 [core]
   autocrlf = false
   pager = less -FXRS -x2 # Two-spaces as tabs
-  excludesfile = ~/.gitexcludes
+	excludesfile = /Users/hakonlovdal/.gitexcludes
   ignorecase = false
   editor = vim
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -47,3 +47,14 @@
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

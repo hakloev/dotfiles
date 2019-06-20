@@ -22,6 +22,8 @@ alias st="open -a Sublime\ Text.app $1"
 
 alias weather='curl http://wttr.in/oslo'
 
+alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
+
 # Personal shell functions
 if [[ "$OSTYPE" == darwin* ]] then
   function sethostname () {

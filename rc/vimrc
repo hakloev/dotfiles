@@ -1,72 +1,112 @@
+" Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'tomasr/molokai'
-
-Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'morhetz/gruvbox'
 
-Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
-Plug 'elzr/vim-json', {'for' : 'json'}
-Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'w0rp/ale'
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" languages
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
-"{ Encoding
-scriptencoding utf-8
-set encoding=utf-8
-"}
+" General {
+set encoding=utf-8              " well, you know
+scriptencoding utf-8            " do I need say more?
+set clipboard=unnamed           " system clipboard
+set nocompatible
+syntax enable                   " syntax highlighting
+filetype plugin indent on       " depend indent on filetype
+set autoread                    " auto load changed files
+set nobackup                    " disable backup files
+set noswapfile                  " disable swap files
+set history=100                 " increase history
 
-set nocompatible "Use Vim settings, rather than Vi settings
-filetype on
-filetype indent on
-syntax on
-
-"{ Colorscheme
+" Style
+set t_Co=256                    " colors
 set background=dark
-colorscheme molokai
-"}
+silent! color gruvbox
+set number                      " line numbers
+set ruler                       " show cursor position
+set showcmd                     " show incomplete command
+set novisualbell                " drop those stupid flashes
+set showmatch                   " show matching brackets
 
-set number "Show line numbers
-set hidden "Hide, not close buffers
-set history=100 "More in memory for speed increase
-set showmatch "Show matching brackets/parenthesis
-set showmode "Show current mode
-set list "Show trailing charachters
-set listchars=tab:\|\ ,trail:•,extends:❯,precedes:❮ " ... but only show tabs and trailing whitespace
-set backspace=indent,eol,start "Allow backspacing over everything in insert mode
-set noshowmode "Remove insert/visual etc from status line, since I use lightline
-set laststatus=2
-
-"{ Indenting
-set nowrap
-set tabstop=2 "I like 4 stops, for Python
-set shiftwidth=2 "Use spaces for indenting
-set expandtab
+" Tabs, spaces and all that
+set nowrap                      " dont wrap long lines
+set tabstop=2                   " use two as default
+set shiftwidth=2                " spaces for indent
+set expandtab                   " use spaces, not tabs! override for filetypes
+set autoindent                  " keep indent
 set smartindent
-set autoindent
-set textwidth=120
-"}
+set backspace=indent,eol,start  " backspace in insert mode
+set list                        " show trailing charachters
+set listchars=tab:\|\ ,trail:•,extends:❯,precedes:❮ " ... but only show tabs and trailing whitespace
+set laststatus=2                " status line
 
-"{ Searching
-set hlsearch "Highlight words when searching
-set ignorecase "Ignore cases when searching
-set smartcase "Don't ignore case when pattern contains upper case
-"}
+" Searching
+set hlsearch                    " hightlight matches
+set ignorecase                  " dont be case sensitive
+set smartcase                   " ...but not when pattern has upper case
 
-"Remove trailing whitespace on close
-autocmd BufWritePre * :%s/\s\+$//e
-"Force tabs when Makefiles
-autocmd FileType make setlocal noexpandtab
+" Windows
+set splitright                  " horizontal splits to the right
+set splitbelow                  " vertical splits below
+" }
 
-"Space as leader
-let mapleader="\<Space>"
-"Open previous file
-nnoremap <Leader><Leader> :e#<CR>
-"Reload config
-map <leader>s :source ~/.vimrc<CR>
+" Mapping {
+let mapleader=','
 
-nnoremap <C-n> :NERDTreeToggle<cr>
+nnoremap <Leader>vv :vsplit $HOME/.vimrc<CR>  " load vimrc
+nnoremap <Leader>sv :source $HOME/.vimrc<CR>  " source vimrc
+nnoremap <CR> :nohlsearch<CR>                 " clear search on return
+
+" navigation
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>w :ALEDetail<CR>
+" }
+
+" FileTypes {
+
+  " remove trailing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
+
+  augroup filetype_json
+    au!
+    au BufNewFile,BufRead *.json setf javascript
+  augroup END
+
+  augroup filetype_python
+    au!
+    au FileType python setl sts=4 ts=4 sw=4
+  augroup END
+" }
+
+" Plugin Configuration {
+let g:NERDTreeHighlightCursorline = 0
+let g:NERDTreeMouseMode = 3
+let g:fzf_layout = { 'down': '~30%' }
+let g:lightline = { 'mode_fallback': { 'terminal': 'normal' } }
+
+" Ale
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \   'javascript': ['eslint'],
+            \   'elm': ['format'],
+            \}
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
+let g:ale_completion_enabled = 0
+let g:ale_sign_column_always = 1
+" }

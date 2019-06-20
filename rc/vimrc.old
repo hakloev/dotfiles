@@ -1,0 +1,72 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomasr/molokai'
+
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'junegunn/rainbow_parentheses.vim'
+
+Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'elzr/vim-json', {'for' : 'json'}
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+call plug#end()
+
+"{ Encoding
+scriptencoding utf-8
+set encoding=utf-8
+"}
+
+set nocompatible "Use Vim settings, rather than Vi settings
+filetype on
+filetype indent on
+syntax on
+
+"{ Colorscheme
+set background=dark
+colorscheme molokai
+"}
+
+set number "Show line numbers
+set hidden "Hide, not close buffers
+set history=100 "More in memory for speed increase
+set showmatch "Show matching brackets/parenthesis
+set showmode "Show current mode
+set list "Show trailing charachters
+set listchars=tab:\|\ ,trail:•,extends:❯,precedes:❮ " ... but only show tabs and trailing whitespace
+set backspace=indent,eol,start "Allow backspacing over everything in insert mode
+set noshowmode "Remove insert/visual etc from status line, since I use lightline
+set laststatus=2
+
+"{ Indenting
+set nowrap
+set tabstop=2 "I like 4 stops, for Python
+set shiftwidth=2 "Use spaces for indenting
+set expandtab
+set smartindent
+set autoindent
+set textwidth=120
+"}
+
+"{ Searching
+set hlsearch "Highlight words when searching
+set ignorecase "Ignore cases when searching
+set smartcase "Don't ignore case when pattern contains upper case
+"}
+
+"Remove trailing whitespace on close
+autocmd BufWritePre * :%s/\s\+$//e
+"Force tabs when Makefiles
+autocmd FileType make setlocal noexpandtab
+
+"Space as leader
+let mapleader="\<Space>"
+"Open previous file
+nnoremap <Leader><Leader> :e#<CR>
+"Reload config
+map <leader>s :source ~/.vimrc<CR>
+
+nnoremap <C-n> :NERDTreeToggle<cr>
