@@ -6,5 +6,5 @@ Host github.com
 
 Host hakloev
     HostName hakloev.no
-    Port 723
+    Port 22
     User hakloev

@@ -26,6 +26,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
 export PATH="/usr/local/opt/curl/bin:$PATH"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 export M2_REPO="$HOME/.m2/repository"
 
@@ -42,7 +44,7 @@ if [[ "$OSTYPE" == darwin* ]] then
   export GPG_TTY=$(tty) # For gpg on macOS
 fi
 
-# Export NSB specific exports if the file exists
-if [ -f ~/.nsbrc ]; then
-  source ~/.nsbrc
+# Export Finn specific exports if the file exists
+if [ -f ~/.finnrc ]; then
+  source ~/.finnrc
 fi
