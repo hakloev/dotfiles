@@ -10,7 +10,7 @@
 [core]
   autocrlf = false
   pager = less -FXRS -x2 # Two-spaces as tabs
-	excludesfile = /Users/hakonlovdal/.gitexcludes
+  excludesfile = ~/.gitexcludes
   ignorecase = false
   editor = vim
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -54,7 +54,7 @@
 	process = git-lfs filter-process
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+        path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
