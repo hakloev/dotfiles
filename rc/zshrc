@@ -53,6 +53,12 @@ fzf_git_add() {
     fi
 }
 
+# Git
+gtag() {
+  git tag -a $1 -m "Release $1"
+  echo "Added tag $1, maybe you should push it to remote?"
+}
+
 alias glo='fzf_git_log'
 alias gaa='fzf_git_add'
 alias gl='git l'
