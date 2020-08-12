@@ -3,6 +3,6 @@
 DIR="$HOME/git/internal"
 mkdir -p $DIR
 cd $DIR
-git clone --recursive https://github.com/hakloev/unix-dot.git
-cd unix-dot
+git clone --recursive https://github.com/hakloev/dotfiles.git
+cd dotfiles
 source bootstrap.sh
