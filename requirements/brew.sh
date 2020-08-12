@@ -9,16 +9,13 @@ brew install zsh
 brew install zsh-completions
 brew install wget
 brew install git
-brew install fish
 brew install openssl
-brew install tmux
 brew install nodejs
-brew install mosh
 brew install sqlite
 brew install python3
 brew install tree
 brew install unrar
-brew install vim
 brew install gpg
+brew install wireguard-tools
 
 brew cleanup
