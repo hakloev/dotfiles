@@ -11,6 +11,7 @@ else
     echo "Homebrew already installed, skipping install"
 fi
 
-# Update homebrew
-sh requirements/brew.sh
+sudo -v
 
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1

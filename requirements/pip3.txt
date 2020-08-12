@@ -4,8 +4,6 @@ flake8-import-order
 flake8-print
 flake8-quotes
 pep8-naming
-requests
 virtualenv
 virtualenvwrapper
-matplotlib
 markdown

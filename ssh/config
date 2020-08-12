@@ -4,7 +4,7 @@ Host *
 Host github.com
   HostName github.com
 
-Host hakloev
-    HostName hakloev.no
+Host loevdal
+    HostName loevdal.no
     Port 22
-    User hakloev
+    User root

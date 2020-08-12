@@ -28,11 +28,11 @@ esac
 
 
 if [  "$(uname -s)" == "Darwin" ]; then
-	echo "Bootstraping macOS"
-	sh scripts/macos.sh
-	if [ $? -eq 0 ]; then
+  echo "Bootstraping macOS"
+  sh scripts/macos.sh
+  if [ $? -eq 0 ]; then
         success "macOS dependencies installed"
-        info "Remember to run 'brew bundle install' in './requirements' to install casks"
+        info "Remember to run 'brew bundle install' in './requirements' to install dependencies"
         read -r -p "Press enter to continue " -n 1
     else
         fail "Failed to install macOS dependencies"
@@ -46,7 +46,7 @@ case $choice in
     [yY])
         echo "Installing pip3 requirements"
         pip3 install -r requirements/pip3.txt
-		success "Done installing pip3 requirements"
+        success "Done installing pip3 requirements"
         ;;
     *)
         info "Skipping pip3 requirements"
