@@ -45,7 +45,7 @@ echo
 case $choice in
     [yY])
         echo "Installing pip3 requirements"
-        pip3 install -r requirements/pip3.txt
+        pip3 install --user -r requirements/pip3.txt
         success "Done installing pip3 requirements"
         ;;
     *)
