@@ -8,14 +8,17 @@ cask 'docker'
 cask 'rectangle'
 
 cask 'google-chrome'
+cask 'postman'
 
 cask 'slack'
+cask 'discord'
 cask 'spotify'
 
 cask '1password'
 
 brew 'zsh'
-brew 'zsh-completions'
+brew 'zsh-autosuggestions'
+
 brew 'wget'
 brew 'git'
 brew 'openssl'
@@ -23,4 +26,3 @@ brew 'nodejs'
 brew 'sqlite'
 brew 'python3'
 brew 'tree'
-
