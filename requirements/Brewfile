@@ -17,8 +17,6 @@ cask 'spotify'
 cask '1password'
 
 brew 'zsh'
-brew 'zsh-autosuggestions'
-
 brew 'wget'
 brew 'git'
 brew 'openssl'
