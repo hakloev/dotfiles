@@ -7,6 +7,7 @@ cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'docker'
 cask 'rectangle'
+cask 'kap'
 
 cask 'google-chrome'
 cask 'postman'
