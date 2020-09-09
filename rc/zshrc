@@ -55,8 +55,20 @@ fzf_git_add() {
 
 # Git
 gtag() {
+  if [ -z $1 ]; then
+    echo "No tag provided"
+    return
+  fi
+
   git tag -a $1 -m "Release $1"
-  echo "Added tag $1, maybe you should push it to remote?"
+
+  if [[ "$2" =~ ^[Yy]$ ]] then
+    echo "Pusing to origin --tags"
+    git push origin --tags
+  else
+    echo "Added tag, but didn't push it to origin"
+  fi
+
 }
 
 alias glo='fzf_git_log'
