@@ -10,6 +10,7 @@ cask 'rectangle'
 cask 'kap'
 
 cask 'google-chrome'
+cask 'firefox'
 cask 'postman'
 
 cask 'slack'
