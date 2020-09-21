@@ -27,3 +27,5 @@ brew 'nodejs'
 brew 'sqlite'
 brew 'python3'
 brew 'tree'
+
+brew 'swiftlint'
