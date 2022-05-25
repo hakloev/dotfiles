@@ -5,11 +5,9 @@ cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added ea
 cask 'iterm2'
 cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
-cask 'docker'
 cask 'rectangle'
 cask 'kap'
 
-cask 'google-chrome'
 cask 'firefox'
 cask 'postman'
 
@@ -19,6 +17,7 @@ cask 'spotify'
 
 cask '1password'
 
+brew 'maven'
 brew 'zsh'
 brew 'wget'
 brew 'git'
@@ -26,6 +25,9 @@ brew 'openssl'
 brew 'nodejs'
 brew 'sqlite'
 brew 'python3'
+brew 'pipenv'
+brew 'jq'
 brew 'tree'
+brew 'tmux'
 
 brew 'swiftlint'
