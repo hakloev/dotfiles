@@ -8,3 +8,4 @@ dotfiles/vim/undo/*
 dotfiles/ssh/id*
 dotfiles/ssh/known_hosts
 dotfiles/ssh/github*
+requirements/Brewfile.lock*
