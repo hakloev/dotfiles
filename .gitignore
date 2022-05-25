@@ -1,11 +1,4 @@
-dotfiles/vim/viminfo
-dotfiles/vim/bundle/*
-dotfiles/vim/plugged/*
-dotfiles/vim/colors/*
-dotfiles/vim/swap/*
-dotfiles/vim/backup/*
-dotfiles/vim/undo/*
-dotfiles/ssh/id*
-dotfiles/ssh/known_hosts
-dotfiles/ssh/github*
+ssh/id*
+ssh/known_hosts
+ssh/github*
 requirements/Brewfile.lock*
