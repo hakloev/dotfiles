@@ -1,6 +1,10 @@
 cask_args appdir: '/Applications'
 tap 'homebrew/services'
-cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
+tap 'hashicorp/tap'
+tap 'adoptopenjdk/openjdk'
+
+# cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
+cask 'adoptopenjdk11'
 
 cask 'iterm2'
 cask 'visual-studio-code'
@@ -17,12 +21,20 @@ cask 'spotify'
 
 cask '1password'
 
-brew 'maven'
+cask 'google-cloud-sdk'
+
+brew 'docker'
+brew 'docker-compose'
+brew 'colima' # Replaces Docker Desktop
+
+brew 'terraform'
+# brew 'maven'
 brew 'zsh'
 brew 'wget'
 brew 'git'
 brew 'openssl'
 brew 'nodejs'
+brew 'nvm'
 brew 'sqlite'
 brew 'python3'
 brew 'pipenv'
@@ -30,4 +42,5 @@ brew 'jq'
 brew 'tree'
 brew 'tmux'
 
-brew 'swiftlint'
+# Requires Xcode to be installed first
+# brew 'swiftlint'
