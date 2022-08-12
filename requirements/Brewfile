@@ -12,6 +12,7 @@ cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'rectangle'
 cask 'kap'
 
+cask 'google-chrome'
 cask 'firefox'
 cask 'postman'
 
