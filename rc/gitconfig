@@ -2,11 +2,23 @@
   user = hakloev
   name = Håkon Ødegård Løvdal
   email = hakon@loevdal.no
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO918l56BKN5v6XXfvpnhv0TmC5swanv/dVb1Ao4J8wc
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
 [color]
   diff = always
   status = always
   branch = always
   ui = true
+
 [core]
   autocrlf = false
   pager = less -FXRS -x2 # Two-spaces as tabs
@@ -17,21 +29,29 @@
   # [default] trailing-space: looks for spaces at the end of a line
   # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space,blank-at-eof
+
 [push]
   default = current
   followTags = true
+
 [fetch]
   prune = true
+
 [hub]
   protocol = ssh
+
 [rerere]
   enabled = true
+
 [clean]
   requireForce = false
+
 [merge]
   tool = opendiff
+
 [apply]
   whitespace = fix
+
 [alias]
   # View the current working tree status using the short format
   s = status -s
@@ -52,9 +72,11 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
+
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
+
 [mergetool "sourcetree"]
   cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
