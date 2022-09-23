@@ -41,6 +41,7 @@ brew 'python3'
 brew 'pipenv'
 brew 'jq'
 brew 'tree'
+brew 'nvim'
 brew 'tmux'
 
 # Requires Xcode to be installed first
