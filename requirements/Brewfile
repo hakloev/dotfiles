@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 tap 'homebrew/services'
-tap 'hashicorp/tap'
 tap 'adoptopenjdk/openjdk'
 
 # cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
@@ -28,7 +27,7 @@ brew 'docker'
 brew 'docker-compose'
 brew 'colima' # Replaces Docker Desktop
 
-brew 'terraform'
+brew 'tfenv' # Terraform environment
 # brew 'maven'
 brew 'zsh'
 brew 'wget'
