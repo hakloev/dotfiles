@@ -5,8 +5,8 @@ ORIGIN=$HOME/git/internal/dotfiles
 function deploy() {
 	ls -1 $ORIGIN/rc/ | while read -r FILE;
 	do
-		rm -r ~/.$FILE &> /dev/null
-		ln -s $ORIGIN/rc/$FILE ~/.$FILE
+		rm -r $HOME/.$FILE &> /dev/null
+		ln -s $ORIGIN/rc/$FILE $HOME/.$FILE
 		echo "Created symlink for $FILE"
 	done
 }
@@ -15,14 +15,14 @@ function deploy() {
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
 function deploy_ssh() {
 	if [ ! -d $HOME/.ssh ]; then
-		mkdir ~/.ssh/
+		mkdir $HOME/.ssh/
 	fi
 
 	if [ -f "$HOME/.ssh/config" ]; then
-		rm -f ~/.ssh/config
-		ln -s $ORIGIN/ssh/config ~/.ssh/config
+		rm -f $HOME/.ssh/config
+		ln -s $ORIGIN/ssh/config $HOME/.ssh/config
 	else
-		ln -s $ORIGIN/ssh/config ~/.ssh/config
+		ln -s $ORIGIN/ssh/config $HOME/.ssh/config
 	fi
 }
 
