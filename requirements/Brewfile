@@ -39,9 +39,16 @@ brew 'sqlite'
 brew 'python3'
 brew 'pipenv'
 brew 'jq'
+brew 'grep'
+brew 'fd'
+brew 'fzf'
 brew 'tree'
+brew 'tree-sitter'
 brew 'nvim'
 brew 'tmux'
 
+# brew 'typescript-language-server' TODO: Add with npm
+brew 'terraform-ls'
+brew 'tflint'
 # Requires Xcode to be installed first
 # brew 'swiftlint'
