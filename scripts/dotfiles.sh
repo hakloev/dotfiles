@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-ORIGIN=~/git/internal/dotfiles
+ORIGIN=$HOME/git/internal/dotfiles
 
 function deploy() {
 	ls -1 $ORIGIN/rc/ | while read -r FILE;
@@ -26,10 +26,22 @@ function deploy_ssh() {
 	fi
 }
 
+function deploy_nvim() {
+  mkdir -p $HOME/.config
+
+  if [ -f "$HOME/.config/nvim" ]; then
+    rm -f $HOME/.config/nvim
+    ln -s $ORIGIN/nvim $HOME/.config
+  else
+    ln -s $ORIGIN/nvim $HOME/.config
+  fi
+}
+
 function install_vimplug() {
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 deploy
 deploy_ssh
+deploy_nvim
 install_vimplug
