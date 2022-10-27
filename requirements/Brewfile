@@ -10,10 +10,12 @@ cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'rectangle'
 cask 'kap'
+brew 'gifski'
 
 cask 'google-chrome'
 cask 'firefox'
 cask 'postman'
+cask 'notion'
 
 cask 'slack'
 cask 'discord'
