@@ -1,11 +1,16 @@
 cask_args appdir: '/Applications'
 tap 'homebrew/services'
+tap 'homebrew/cask-fonts'
 tap 'adoptopenjdk/openjdk'
 
-# cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
+cask 'font-jetbrains-mono'
+cask 'font-fira-code'
+
+cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
 cask 'adoptopenjdk11'
 
 cask 'iterm2'
+cask 'alacritty'
 cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'rectangle'
@@ -19,6 +24,7 @@ cask 'notion'
 
 cask 'slack'
 cask 'discord'
+cask 'signal'
 cask 'spotify'
 
 cask '1password'
