@@ -1,48 +1,52 @@
-cask_args appdir: '/Applications'
+cask_args appdir: '~/Applications'
 tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
 tap 'adoptopenjdk/openjdk'
 
+cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
+cask 'adoptopenjdk11'
+
+brew 'mas'
+
+cask '1password'
+mas '1Password for Safari', id: 1569813296
+
 cask 'font-jetbrains-mono'
 cask 'font-fira-code'
 
-cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
-cask 'adoptopenjdk11'
 
 cask 'iterm2'
 cask 'alacritty'
 cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
+cask 'webstorm'
+
 cask 'rectangle'
 cask 'kap'
 brew 'gifski'
 
 cask 'google-chrome'
 cask 'firefox'
+cask 'vivaldi'
 cask 'postman'
-cask 'notion'
+cask 'obsidian'
 
 cask 'slack'
 cask 'discord'
-cask 'signal'
 cask 'spotify'
-
-cask '1password'
-
-cask 'google-cloud-sdk'
 
 brew 'docker'
 brew 'docker-compose'
 brew 'colima' # Replaces Docker Desktop
 
-brew 'tfenv' # Terraform environment
-# brew 'maven'
 brew 'zsh'
-brew 'wget'
 brew 'git'
-brew 'openssl'
+brew 'gh'
 brew 'nodejs'
 brew 'nvm'
+brew 'maven'
+brew 'wget'
+brew 'openssl'
 brew 'sqlite'
 brew 'python3'
 brew 'pipenv'
@@ -55,8 +59,9 @@ brew 'tree-sitter'
 brew 'nvim'
 brew 'tmux'
 
+cask 'google-cloud-sdk'
+
 # brew 'typescript-language-server' TODO: Add with npm
+brew 'tfenv' # Terraform environment
 brew 'terraform-ls'
 brew 'tflint'
-# Requires Xcode to be installed first
-# brew 'swiftlint'
