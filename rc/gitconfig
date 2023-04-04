@@ -4,6 +4,9 @@
   email = hakon@loevdal.no
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO918l56BKN5v6XXfvpnhv0TmC5swanv/dVb1Ao4J8wc
 
+[includeIf "gitdir:~/git/external/rm/"]
+  path = .gitconfig-rm
+
 [gpg]
   format = ssh
 
@@ -59,6 +62,7 @@
   d = diff
   wd = diff \n--color-words
   co = checkout
+  cb = checkout -b
   w = whatchanged --oneline
   unstage = reset HEAD --
   uncommit = reset --soft HEAD^
@@ -66,6 +70,7 @@
   cl = clone --recursive
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  clean = "git branch --color=never --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
 
 [filter "lfs"]
   required = true
@@ -80,5 +85,6 @@
 [mergetool "sourcetree"]
   cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
+
 [init]
 	defaultBranch = main
