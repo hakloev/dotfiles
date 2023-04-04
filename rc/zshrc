@@ -24,6 +24,10 @@ alias weather='curl http://wttr.in/oslo'
 
 alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
 
+alias clrnxt="rm -rf $PWD/.next/cache"
+
+alias cleantooth="sudo pkill bluetoothd"
+
 # Personal shell functions
 if [[ "$OSTYPE" == darwin* ]] then
   function sethostname () {
@@ -68,7 +72,6 @@ gtag() {
   else
     echo "Added tag, but didn't push it to origin"
   fi
-
 }
 
 alias glo='fzf_git_log'
