@@ -14,7 +14,7 @@ fail () {
 }
 
 
-read -r -p "Link dotfiles? [yY/n] " -n 1 choice
+read -r -p "Link dotfiles? [y/n] " -n 1 choice
 echo
 case $choice in
     [yY])
@@ -30,17 +30,17 @@ esac
 if [  "$(uname -s)" == "Darwin" ]; then
   echo "Bootstraping macOS"
   sh scripts/macos.sh
+  (cd $HOME/git/internal/dotfiles/requirements && brew bundle install) # temporary move to './requirements' and run 'brew bundle'
+  
   if [ $? -eq 0 ]; then
         success "macOS dependencies installed"
-        info "Remember to run 'brew bundle install' in './requirements' to install dependencies"
-        read -r -p "Press enter to continue " -n 1
     else
         fail "Failed to install macOS dependencies"
     fi
 fi
 
 
-read -r -p "Install pip3 requirements? [yY/n] " -n 1 choice
+read -r -p "Install pip3 requirements? [y/n] " -n 1 choice
 echo
 case $choice in
     [yY])
