@@ -29,6 +29,9 @@ font:
     x: 0
     y: 0
 
+selection:
+  save_to_clipboard: true
+
 schemes:
   ### GruvboxDark ###
   GruvboxDark: &GruvboxDark
@@ -61,11 +64,3 @@ schemes:
       white:   '0xebdbb2'
 
 colors: *GruvboxDark
-
-  #hints:
-  #enabled:
-  #- hyperlinks: true
-  #   command: xdg-open
-      #binding:
-      #key: U
-      # mods: Command
