@@ -21,14 +21,6 @@ font:
 
   size: 13.0
 
-  offset:
-    x: 0
-    y: 0
-
-  glyph_offset:
-    x: 0
-    y: 0
-
 selection:
   save_to_clipboard: true
 
