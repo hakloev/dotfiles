@@ -14,7 +14,6 @@ mas '1Password for Safari', id: 1569813296
 cask 'font-jetbrains-mono'
 cask 'font-fira-code'
 
-
 cask 'iterm2'
 cask 'alacritty'
 cask 'visual-studio-code'
@@ -58,6 +57,7 @@ brew 'tree'
 brew 'tree-sitter'
 brew 'nvim'
 brew 'tmux'
+brew 'tmuxinator'
 
 cask 'google-cloud-sdk'
 
