@@ -10,12 +10,14 @@ brew 'mas'
 
 cask '1password'
 mas '1Password for Safari', id: 1569813296
+mas 'Tailscale', id: 1475387142
 
 cask 'font-jetbrains-mono'
 cask 'font-fira-code'
 
 cask 'iterm2'
 cask 'alacritty'
+cask 'ngrok'
 cask 'visual-studio-code'
 cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'webstorm'
@@ -29,10 +31,12 @@ cask 'firefox'
 cask 'vivaldi'
 cask 'postman'
 cask 'obsidian'
+cask 'remarkable'
 
 cask 'slack'
 cask 'discord'
 cask 'spotify'
+cask 'sonos'
 
 brew 'docker'
 brew 'docker-compose'
