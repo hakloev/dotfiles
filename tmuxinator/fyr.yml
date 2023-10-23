@@ -1,0 +1,12 @@
+---
+name: fyr
+root: ~/git/external/fyr
+startup_window: fyr-web
+
+windows:
+  - fyr-web:
+      layout: even-horizontal
+      root: ~/git/external/fyr/fyr-web
+      panes:
+        -
+        - npm run dev

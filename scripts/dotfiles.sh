@@ -2,10 +2,10 @@
 
 ORIGIN=$HOME/git/internal/dotfiles
 
-function deploy() {
+function dotfiles() {
 	ls -1 $ORIGIN/rc/ | while read -r FILE;
-	do
-		rm -r $HOME/.$FILE &> /dev/null
+  do
+		rm -f $HOME/.$FILE &> /dev/null
 		ln -s $ORIGIN/rc/$FILE $HOME/.$FILE
 		echo "Created symlink for $FILE"
 	done
@@ -13,7 +13,7 @@ function deploy() {
 
 # The two following functions is taken from @kradalby's deploy.sh
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
-function deploy_ssh() {
+function add_ssh() {
 	if [ ! -d $HOME/.ssh ]; then
 		mkdir $HOME/.ssh/
 	fi
@@ -26,22 +26,24 @@ function deploy_ssh() {
 	fi
 }
 
-function deploy_nvim() {
-  mkdir -p $HOME/.config
-
-  if [ -f "$HOME/.config/nvim" ]; then
-    rm -f $HOME/.config/nvim
-    ln -s $ORIGIN/nvim $HOME/.config
-  else
-    ln -s $ORIGIN/nvim $HOME/.config
+function add_tmuxinator() {
+  if [ ! -d $HOME/.tmuxinator ]; then
+    mkdir $HOME/.tmuxinator
   fi
+
+  ls -1 $ORIGIN/tmuxinator/ | while read -r FILE;
+  do
+    rm -f $HOME/.tmuxinator/$FILE &> /dev/null
+    ln -s $ORIGIN/tmuxinator/$FILE $HOME/.tmuxinator/$FILE
+    echo "Created symlink for $FILE"
+  done
 }
 
 function install_vimplug() {
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-deploy
-deploy_ssh
-deploy_nvim
+dotfiles
+add_ssh
+add_tmuxinator
 install_vimplug
