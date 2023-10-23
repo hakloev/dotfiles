@@ -1,7 +1,5 @@
 # dotfiles
 
-It's all about the dotfiles!
-
 ## Install
 
 ```
