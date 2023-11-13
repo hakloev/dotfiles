@@ -14,12 +14,12 @@ font:
     style: Regular
   bold:
     family: JetBrains Mono
-    style: Bold
+    style: SemiBold
   italic:
     family: JetBrains Mono
-    style: Italic
+    style: SemiItalic
 
-  size: 13.0
+  size: 14.0
 
 selection:
   save_to_clipboard: true
