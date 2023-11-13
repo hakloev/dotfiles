@@ -19,23 +19,10 @@ alias mrpr='mvn release:prepare'
 alias mrpe='mvn release:perform'
 
 alias st="open -a Sublime\ Text.app $1"
-
 alias weather='curl http://wttr.in/oslo'
-
 alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
-
-alias clrnxt="rm -rf $PWD/.next/cache"
-
+alias clearnext="rm -rf $PWD/.next/cache"
 alias cleantooth="sudo pkill bluetoothd"
-
-# Personal shell functions
-if [[ "$OSTYPE" == darwin* ]] then
-  function sethostname () {
-    sudo scutil --set ComputerName $1
-    sudo scutil --set LocalHostName $1
-    sudo scutil --set HostName $1
-  }
-fi
 
 # FZF
 fzf_git_log() {
@@ -74,6 +61,17 @@ gtag() {
   fi
 }
 
+# Brew
+BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
+
+brew_update() {
+  (cd $BREW_REQUIREMENTS_DIR && brew bundle install) # temporary move to './requirements' and run 'brew bundle'
+}
+
+brew_cleanup() {
+  (cd $BREW_REQUIREMENTS_DIR && brew bundle cleanup $1)
+}
+
 alias glo='fzf_git_log'
 alias gaa='fzf_git_add'
 alias gl='git l'
@@ -101,3 +99,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+# Created by `pipx` on 2023-11-01 07:40:00
+export PATH="$PATH:/Users/hakloev/.local/bin"

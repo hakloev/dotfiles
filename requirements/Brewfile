@@ -1,12 +1,10 @@
 cask_args appdir: '~/Applications'
 tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
-tap 'adoptopenjdk/openjdk'
 
 cask 'font-jetbrains-mono'
 
-cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
-cask 'adoptopenjdk11'
+brew 'openjdk@17'
 
 brew 'mas'
 
@@ -14,12 +12,11 @@ cask '1password'
 mas '1Password for Safari', id: 1569813296
 mas 'Tailscale', id: 1475387142
 
-cask 'iterm2'
 cask 'alacritty'
+cask 'iterm2'
 cask 'ngrok'
-cask 'visual-studio-code'
-cask 'intellij-idea' # 'intellij-idea-ce' for community-edition
 cask 'webstorm'
+cask 'visual-studio-code'
 
 cask 'rectangle'
 cask 'kap'
