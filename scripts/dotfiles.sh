@@ -4,7 +4,35 @@ ORIGIN=$HOME/git/internal/dotfiles
 
 source $ORIGIN/scripts/log.sh --source-only
 
-function setDotfiles() {
+function installPrezto() {
+	read -r -p "Install Prezto? [yY/n] " -n 1 choice
+	echo
+	case $choice in
+    [yY])
+			git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+			success "Installed Prezto"
+			;;
+    *)
+			warn "Skipping Prezto"
+			;;
+	esac
+}
+
+function installVimplug() {
+	read -r -p "Install vimplug? [yY/n] " -n 1 choice
+	echo
+	case $choice in
+    [yY])
+			curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+			success "Installed vimplug"
+			;;
+    *)
+			warn "Skipping vimplug"
+			;;
+	esac
+}
+
+function addDotfiles() {
 	info "Symlink dotfiles"
 
 	ls -1 $ORIGIN/rc/ | while read -r FILE;
@@ -19,7 +47,7 @@ function setDotfiles() {
 
 # The following function is taken from @kradalby's deploy.sh
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
-function setSsh() {
+function addSsh() {
 	info "Symlink ssh"
 
 	if [ ! -d $HOME/.ssh ]; then
@@ -53,20 +81,10 @@ function addTmuxinator() {
 	success "Done creating symlink for tmuxinator"
 }
 
-function installVimplug() {
-	read -r -p "Install vimplug? [yY/n] " -n 1 choice
-	echo
-	case $choice in
-    [yY])
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        ;;
-    *)
-        warn "Skipping vimplug"
-        ;;
-	esac
-}
-
-setDotfiles
-setSsh
-addTmuxinator
+installPrezto
 installVimplug
+
+addDotfiles
+addSsh
+addTmuxinator
+
