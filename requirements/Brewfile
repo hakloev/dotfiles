@@ -3,6 +3,8 @@ tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
 tap 'adoptopenjdk/openjdk'
 
+cask 'font-jetbrains-mono'
+
 cask 'java' unless system "/usr/libexec/java_home --failfast" # Must be added early on
 cask 'adoptopenjdk11'
 
@@ -11,9 +13,6 @@ brew 'mas'
 cask '1password'
 mas '1Password for Safari', id: 1569813296
 mas 'Tailscale', id: 1475387142
-
-cask 'font-jetbrains-mono'
-cask 'font-fira-code'
 
 cask 'iterm2'
 cask 'alacritty'
