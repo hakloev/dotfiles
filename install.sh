@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-GIT_DIR="$HOME/git/internal"
+GIT_DIR="$HOME/git"
 
-mkdir -p $GIT_DIR
-cd $GIT_DIR
+mkdir -p $GIT_DIR/{external,internal}
+
+cd $GIT_DIR/internal
 
 git clone --recursive https://github.com/hakloev/dotfiles.git
 
