@@ -17,7 +17,7 @@ function setDotfiles() {
 	success "Done creating symlink for dotfiles"
 }
 
-# The two following functions is taken from @kradalby's deploy.sh
+# The following function is taken from @kradalby's deploy.sh
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
 function setSsh() {
 	info "Symlink ssh"
