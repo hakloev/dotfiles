@@ -17,6 +17,7 @@ cask 'iterm2'
 cask 'ngrok'
 cask 'webstorm'
 cask 'visual-studio-code'
+cask 'raycast'
 
 cask 'rectangle'
 cask 'kap'
