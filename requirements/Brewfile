@@ -2,7 +2,7 @@ cask_args appdir: '~/Applications'
 tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
 
-cask 'font-jetbrains-mono'
+cask 'font-jetbrains-mono-nerd-font'
 
 brew 'openjdk@17'
 
@@ -14,6 +14,9 @@ mas 'Tailscale', id: 1475387142
 
 cask 'alacritty'
 cask 'iterm2'
+brew 'fish'
+brew 'starship'
+
 cask 'ngrok'
 cask 'webstorm'
 cask 'visual-studio-code'
@@ -53,6 +56,7 @@ brew 'pipenv'
 brew 'jq'
 brew 'grep'
 brew 'fd'
+brew 'bat'
 brew 'fzf'
 brew 'tree'
 brew 'tree-sitter'
