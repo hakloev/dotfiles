@@ -11,55 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs..
-alias ed25519key='ssh-keygen -t ed25519 -o -a 100'
-
-alias mci='mvn clean install'
-alias msb='mvn spring-boot:run'
-alias mrpr='mvn release:prepare'
-alias mrpe='mvn release:perform'
-
-alias st="open -a Sublime\ Text.app $1"
-alias weather='curl http://wttr.in/oslo'
-alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
-alias clearnext="rm -rf $PWD/.next/cache"
-alias cleantooth="sudo pkill bluetoothd"
-
 # FZF
-fzf_git_log() {
-    local commits=$(
-      git l --color=always "$@" |
-        fzf --ansi --no-sort --height 100% \
-            --preview "git show --color=always {2}"
-      )
-    if [ -n "$commits" ]; then
-        local hashes=$(printf "$commits" | cut -d' ' -f2 | tr '\n' ' ')
-        git show $hashes
-    fi
-}
-
-fzf_git_add() {
-    local files=$(git ls-files --modified | fzf --ansi)
-    if [ -n "$files" ]; then
-        git add --verbose $files
-    fi
-}
-
-# Git
-gtag() {
-  if [ -z $1 ]; then
-    echo "No tag provided"
-    return
-  fi
-
-  git tag -a $1 -m "Release $1"
-
-  if [[ "$2" =~ ^[Yy]$ ]] then
-    echo "Pusing to origin --tags"
-    git push origin --tags
-  else
-    echo "Added tag, but didn't push it to origin"
-  fi
-}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Brew
 BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
@@ -72,23 +25,27 @@ brew_cleanup() {
   (cd $BREW_REQUIREMENTS_DIR && brew bundle cleanup $1)
 }
 
+# Other
+restart_bluetooth() {
+  sudo pkill bluetoothd
+}
+
+alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
+alias cleannext="rm -rf $PWD/.next/cache"
+
 alias cat='bat'
 
-alias glo='fzf_git_log'
-alias gaa='fzf_git_add'
 alias gl='git l'
 alias ga='git add'
-alias gs='git s'
-alias gd='git d'
+alias gs='git status -s'
+alias gd='git diff'
 alias gco='git checkout'
+alias gcb='git checkout -b'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gf='git fetch'
-alias gpull='git pull'
-alias gpush='git push'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias gm='git merge'
 
 # GCP
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

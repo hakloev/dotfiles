@@ -3,6 +3,9 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
+window:
+  option_as_alt: 'OnlyLeft'
+
 scrolling:
   history: 0
 

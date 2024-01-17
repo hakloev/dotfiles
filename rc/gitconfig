@@ -56,18 +56,10 @@
   whitespace = fix
 
 [alias]
-  # View the current working tree status using the short format
-  s = status -s
-  c = commit
-  d = diff
   wd = diff \n--color-words
-  co = checkout
-  cb = checkout -b
   w = whatchanged --oneline
   unstage = reset HEAD --
   uncommit = reset --soft HEAD^
-  # Clone a repository including all submodules
-  cl = clone --recursive
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   clean = "git branch --color=never --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
@@ -81,10 +73,6 @@
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
-
-[mergetool "sourcetree"]
-  cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 
 [init]
 	defaultBranch = main
