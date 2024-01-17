@@ -14,8 +14,6 @@ mas 'Tailscale', id: 1475387142
 
 cask 'alacritty'
 cask 'iterm2'
-brew 'fish'
-brew 'starship'
 
 cask 'ngrok'
 cask 'webstorm'
