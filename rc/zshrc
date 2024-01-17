@@ -72,6 +72,8 @@ brew_cleanup() {
   (cd $BREW_REQUIREMENTS_DIR && brew bundle cleanup $1)
 }
 
+alias cat='bat'
+
 alias glo='fzf_git_log'
 alias gaa='fzf_git_add'
 alias gl='git l'
