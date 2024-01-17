@@ -46,6 +46,8 @@ alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gf='git fetch'
 alias gm='git merge'
+alias gp='git push'
+alias gpl='git pull'
 
 # GCP
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
