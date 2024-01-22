@@ -56,6 +56,8 @@ brew 'docker'
 brew 'docker-compose'
 brew 'colima' # Replaces Docker Desktop
 
+brew 'direnv'
+
 cask 'google-cloud-sdk'
 
 cask 'font-jetbrains-mono-nerd-font'
