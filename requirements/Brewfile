@@ -33,7 +33,6 @@ cask 'remarkable'
 
 cask 'slack'
 cask 'discord'
-cask 'spotify'
 cask 'sonos'
 
 brew 'docker'
