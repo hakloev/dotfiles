@@ -76,3 +76,6 @@
 
 [init]
 	defaultBranch = main
+
+[url "git@github.com:reMarkable"]
+	insteadOf = https://github.com/reMarkable

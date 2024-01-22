@@ -2,15 +2,18 @@
 # [core]
 #     excludesfile = ~/.gitexcludes
 
-# Compiled stuff 
+# Complied files
 *.class
 
 # Packages
-
 *.jar
 
-# OS generated fuck-up files #
+# OS generated
 .DS_Store*
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# direnv
+.direnv
+.envrc
