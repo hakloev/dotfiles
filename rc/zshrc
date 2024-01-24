@@ -24,6 +24,7 @@ alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
 alias cleannext="rm -rf $PWD/.next/cache"
 
 alias cat='bat'
+alias ls='ls -G'
 
 alias gl='git l'
 alias ga='git add'
