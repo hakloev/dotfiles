@@ -1,0 +1,19 @@
+---
+name: hakloev
+root: ~/git
+startup_window: dotfiles
+
+windows:
+  - dotfiles:
+      root: ~/git/internal/dotfiles
+  - colima:
+      panes:
+        - start:
+          - colima start --memory 4 --cpu 4 --mount-type virtiofs --vm-type vz
+  - fyr-web:
+      layout: main-vertical
+      root: ~/git/external/fyr/fyr-web
+      panes:
+        -
+        - npm run dev -- -p 8085
+        -
