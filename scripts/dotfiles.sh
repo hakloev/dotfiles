@@ -62,7 +62,7 @@ function addAlacritty() {
   FILE=alacritty.toml
 
   mkdir -p $CONFIG_DIR
-  ln -sf $ORIGIN/rc/alacritty/$FILE $CONFIG_DIR/.$FILE
+  ln -sf $ORIGIN/rc/alacritty/$FILE $CONFIG_DIR/$FILE
   info "Created symlink for $FILE"
 }
 
