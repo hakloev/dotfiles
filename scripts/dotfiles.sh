@@ -35,29 +35,23 @@ function addDotfiles() {
 function addSsh() {
   info "Symlink ssh"
 
-  if [ ! -d $HOME/.ssh ]; then
-    mkdir $HOME/.ssh/
-  fi
+  CONFIG_DIR=$HOME/.ssh
+  FILE=config
 
-  if [ -f "$HOME/.ssh/config" ]; then
-    rm -f $HOME/.ssh/config
-    ln -s $ORIGIN/ssh/config $HOME/.ssh/config
-  else
-    ln -s $ORIGIN/ssh/config $HOME/.ssh/config
-  fi
+  mkdir -p $CONFIG_DIR
+  ln -sf $ORIGIN/rc/ssh/$FILE $CONFIG_DIR/$FILE
+  info "Created symlink for $FILE"
 }
 
 function addTmuxinator() {
   info "Symlink tmuxinator"
 
-  if [ ! -d $HOME/.tmuxinator ]; then
-    mkdir $HOME/.tmuxinator
-  fi
+  CONFIG_DIR=$HOME/.tmuxinator
 
-  ls -1 $ORIGIN/tmuxinator/ | while read -r FILE;
+  ls -1 $ORIGIN/rc/tmuxinator/ | while read -r FILE;
   do
-    ln -sf $ORIGIN/tmuxinator/$FILE $HOME/.tmuxinator/$FILE
-    info "Created symlink for $FILE"
+    ln -sf $ORIGIN/tmuxinator/$FILE $CONFIG_DIR/$FILE
+    info "Created symlink for tmuxinator config: $FILE"
   done
 }
 
