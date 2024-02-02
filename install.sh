@@ -8,4 +8,4 @@ cd $GIT_DIR/internal
 
 git clone --recursive https://github.com/hakloev/dotfiles.git
 
-source bootstrap.sh
+source dotfiles/scripts/bootstrap.sh
