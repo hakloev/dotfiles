@@ -4,20 +4,6 @@ ORIGIN=$HOME/git/internal/dotfiles
 
 source $ORIGIN/scripts/log.sh --source-only
 
-function installPrezto() {
-  read -r -p "Install Prezto? [yY/n] " -n 1 choice
-  echo
-  case $choice in
-    [yY])
-      git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-      success "Installed Prezto"
-      ;;
-    *)
-      warn "Skipping Prezto"
-      ;;
-  esac
-}
-
 function installVimplug() {
   read -r -p "Install vimplug? [yY/n] " -n 1 choice
   echo
@@ -35,10 +21,9 @@ function installVimplug() {
 function addDotfiles() {
   info "Symlink dotfiles"
 
-  ls -1 $ORIGIN/rc/ | while read -r FILE;
+  ls -1 $ORIGIN/rc | grep -Ev "alacritty|ssh|tmuxinator" | while read -r FILE;
   do
-    rm -f $HOME/.$FILE &> /dev/null
-    ln -s $ORIGIN/rc/$FILE $HOME/.$FILE
+    ln -sf $ORIGIN/rc/$FILE $HOME/.$FILE
     info "Created symlink for $FILE"
   done
 
@@ -60,8 +45,6 @@ function addSsh() {
   else
     ln -s $ORIGIN/ssh/config $HOME/.ssh/config
   fi
-
-  success "Done creating symlink for ssh"
 }
 
 function addTmuxinator() {
@@ -73,17 +56,25 @@ function addTmuxinator() {
 
   ls -1 $ORIGIN/tmuxinator/ | while read -r FILE;
   do
-    rm -f $HOME/.tmuxinator/$FILE &> /dev/null
-    ln -s $ORIGIN/tmuxinator/$FILE $HOME/.tmuxinator/$FILE
+    ln -sf $ORIGIN/tmuxinator/$FILE $HOME/.tmuxinator/$FILE
     info "Created symlink for $FILE"
   done
-
-  success "Done creating symlink for tmuxinator"
 }
 
-installPrezto
+function addAlacritty() {
+  info "Symlink alacritty config"
+
+  CONFIG_DIR=$HOME/.config/alacritty
+  FILE=alacritty.toml
+
+  mkdir -p $CONFIG_DIR
+  ln -sf $ORIGIN/rc/alacritty/$FILE $CONFIG_DIR/.$FILE
+  info "Created symlink for $FILE"
+}
+
 installVimplug
 
 addDotfiles
 addSsh
 addTmuxinator
+addAlacritty

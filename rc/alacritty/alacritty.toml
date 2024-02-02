@@ -1,0 +1,36 @@
+import = [
+  "~/.config/alacritty/themes/themes/oceanic_next.toml"
+]
+
+
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 0
+
+[selection]
+save_to_clipboard = true
+
+[window]
+option_as_alt = "OnlyLeft"
