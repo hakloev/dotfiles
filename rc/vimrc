@@ -6,8 +6,6 @@ Plug 'scrooloose/nerdtree'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'morhetz/gruvbox'
-
 Plug 'w0rp/ale'
 
 " languages
@@ -31,7 +29,6 @@ set history=100                 " increase history
 " Style
 set t_Co=256                    " colors
 set background=dark
-silent! color gruvbox
 set number                      " line numbers
 set ruler                       " show cursor position
 set showcmd                     " show incomplete command
