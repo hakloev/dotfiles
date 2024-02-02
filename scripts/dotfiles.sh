@@ -48,9 +48,10 @@ function addTmuxinator() {
 
   CONFIG_DIR=$HOME/.tmuxinator
 
-  ls -1 $ORIGIN/rc/tmuxinator/ | while read -r FILE;
+  mkdir -p $CONFIG_DIR
+  ls -1 $ORIGIN/rc/tmuxinator | while read -r FILE;
   do
-    ln -sf $ORIGIN/tmuxinator/$FILE $CONFIG_DIR/$FILE
+    ln -sf $ORIGIN/rc/tmuxinator/$FILE $CONFIG_DIR/$FILE
     info "Created symlink for tmuxinator config: $FILE"
   done
 }
