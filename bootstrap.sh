@@ -13,17 +13,6 @@ case $choice in
     ;;
 esac
 
-if [  "$(uname -s)" == "Darwin" ]; then
-  info "Run macOS configuration script"
-  sh scripts/macos.sh
-
-  if [ $? -eq 0 ]; then
-    success "macOS dependencies installed"
-  else
-    warn "Failed to install macOS dependencies"
-  fi
-fi
-
 read -r -p "Install pip3 requirements? [yY/n] " -n 1 choice
 echo
 case $choice in
@@ -35,6 +24,19 @@ case $choice in
   *)
     warn "Skipping pip3 requirements"
     ;;
+esac
+
+case `uname` in
+  Darwin)
+    info "Run macOS configuration script"
+    sh scripts/macos.sh
+
+    if [ $? -eq 0 ]; then
+      success "macOS dependencies installed"
+    else
+      warn "Failed to install macOS dependencies"
+    fi
+  ;;
 esac
 
 success "Done bootstraping"
