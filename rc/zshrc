@@ -29,6 +29,7 @@ alias cleannext="rm -rf $PWD/.next/cache"
 
 alias cat='bat'
 alias ls='ls -G'
+alias mux='tmuxinator'
 
 alias gl='git l'
 alias ga='git add'
