@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+source $(dirname "$0")/log.sh --source-only
+source $(dirname "$0")/alacritty-theme.sh --source-only
+
 ORIGIN=$HOME/git/internal/dotfiles
 
-source $ORIGIN/scripts/log.sh --source-only
-
-function installVimplug() {
+function install_vimplug() {
   read -r -p "Install vimplug? [yY/n] " -n 1 choice
   echo
   case $choice in
@@ -18,13 +19,15 @@ function installVimplug() {
   esac
 }
 
-function addDotfiles() {
+function add_dotfiles() {
   info "Symlink dotfiles"
 
-  ls -1 $ORIGIN/rc | grep -Ev "alacritty|ssh|tmuxinator" | while read -r FILE;
+  IGNORED_FOLDERS="alacritty|ssh|tmuxinator"
+
+  ls -1 $ORIGIN/rc | grep -Ev $IGNORED_FOLDERS | while read -r FILE;
   do
     ln -sf $ORIGIN/rc/$FILE $HOME/.$FILE
-    info "Created symlink for $FILE"
+    info "Created symlink for $FILE to $HOME/.$FILE"
   done
 
   success "Done creating symlink for dotfiles"
@@ -32,19 +35,19 @@ function addDotfiles() {
 
 # The following function is taken from @kradalby's deploy.sh
 # https://github.com/kradalby/dotfiles/blob/master/deploy.sh
-function addSsh() {
-  info "Symlink ssh"
+function add_ssh() {
+  info "Symlink ssh folder"
 
   CONFIG_DIR=$HOME/.ssh
   FILE=config
 
   mkdir -p $CONFIG_DIR
   ln -sf $ORIGIN/rc/ssh/$FILE $CONFIG_DIR/$FILE
-  info "Created symlink for $FILE"
+  info "Created symlink for $FILE to $CONFIG_DIR"
 }
 
-function addTmuxinator() {
-  info "Symlink tmuxinator"
+function add_tmuxinator() {
+  info "Symlink tmuxinator folder"
 
   CONFIG_DIR=$HOME/.tmuxinator
 
@@ -52,24 +55,25 @@ function addTmuxinator() {
   ls -1 $ORIGIN/rc/tmuxinator | while read -r FILE;
   do
     ln -sf $ORIGIN/rc/tmuxinator/$FILE $CONFIG_DIR/$FILE
-    info "Created symlink for tmuxinator config: $FILE"
+    info "Created symlink for tmuxinator project $FILE to $CONFIG_DIR"
   done
 }
 
-function addAlacritty() {
-  info "Symlink alacritty config"
+function add_alacritty() {
+  info "Symlink alacritty folder"
 
   CONFIG_DIR=$HOME/.config/alacritty
   FILE=alacritty.toml
 
   mkdir -p $CONFIG_DIR
   ln -sf $ORIGIN/rc/alacritty/$FILE $CONFIG_DIR/$FILE
-  info "Created symlink for $FILE"
+  info "Created symlink for $FILE to $CONFIG_DIR"
 }
 
-installVimplug
+install_vimplug
 
-addDotfiles
-addSsh
-addTmuxinator
-addAlacritty
+add_dotfiles
+add_ssh
+add_tmuxinator
+add_alacritty
+download_alacritty_theme oceanic_next

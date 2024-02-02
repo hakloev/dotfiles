@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
+
 cd $HOME/git/internal/dotfiles
 
-source scripts/log.sh --source-only
+source $(dirname "$0")/scripts/log.sh --source-only
 
 read -r -p "Link dotfiles? [yY/n] " -n 1 choice
 echo

@@ -2,7 +2,7 @@
 
 source $(dirname "$0")/log.sh --source-only
 
-function setHostName() {
+function set_hostname() {
   read -p 'Hostname: ("" to skip): ' hostname
 
   if [ -z "$hostname" ]; then
@@ -17,7 +17,7 @@ function setHostName() {
   success "Successfully set hostname to '$hostname'"
 }
 
-function setScreenshotDir() {
+function set_screenshot_dir() {
   screenshot_dir=$HOME/Desktop/Screenshots
   mkdir -p $screenshot_dir/{iOS,macOS}
   defaults write com.apple.iphonesimulator ScreenShotSaveLocation "$screenshot_dir/iOS"
@@ -31,8 +31,8 @@ function setDefaults() {
 
 sudo -v
 
-setHostName
-setScreenshotDir
+set_hostname
+set_screenshot_dir
 setDefaults
 
 info 'Install Xcode Developer Tools'
