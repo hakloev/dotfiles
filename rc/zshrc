@@ -1,3 +1,4 @@
+# Antidote Plugin Manager
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
@@ -54,7 +55,6 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
 # NVM
 export NVM_DIR="$HOME/.nvm"
   [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
