@@ -1,10 +1,3 @@
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
@@ -12,17 +5,19 @@ fi
 
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt SHARE_HISTORY
+
+export HISTSIZE=1000000 # Set history size
+export SAVEHIST=$HISTSIZE # Save history after logout
+export HISTFILE="$HOME/.zsh_history"
+export HISTORY_IGNORE="(clear|history|exit|ls|gs|gd|cd|pwd)"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,underline"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export EDITOR="vim"
-export HISTSIZE=1000000 # Set history size
-export SAVEHIST=1000000 # Save history after logout
-export HISTFILE="$HOME/.zsh_history"
-
-# PATH
-export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Maven
 export M2_REPO="$HOME/.m2/repository"
@@ -35,13 +30,12 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # macOS exports
-if [[ "$OSTYPE" == darwin* ]] then
+if [[ $(uname) == Darwin ]] then
   export JAVA_HOME=$(/usr/libexec/java_home) # Specify version with: $(/usr/libexec/java_home -v 1.8.0_265)
-  export PATH=${JAVA_HOME}/bin:$PATH
-  export GPG_TTY=$(tty) # For gpg on macOS
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
-# Export Finn specific exports if the file exists
+# Project specific exports
 if [ -f $HOME/.finnrc ]; then
   source ~/.finnrc
 fi
