@@ -7,6 +7,8 @@ antidote load
 # Brew
 BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
 
+alias brew_edit="vim $BREW_REQUIREMENTS_DIR/Brewfile"
+
 brew_update() {
   (cd $BREW_REQUIREMENTS_DIR && brew bundle install) # temporary move to './requirements' and run 'brew bundle'
 }
