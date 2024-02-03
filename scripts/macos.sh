@@ -24,7 +24,7 @@ function set_screenshot_dir() {
   defaults write com.apple.screencapture location "$screenshot_dir/macOS"
 }
 
-function setDefaults() {
+function set_defaults() {
   sudo defaults write -g InitialKeyRepeat -int 10
   sudo defaults write -g KeyRepeat -int 1
 }
@@ -33,7 +33,7 @@ sudo -v
 
 set_hostname
 set_screenshot_dir
-setDefaults
+set_defaults
 
 info 'Install Xcode Developer Tools'
 xcode-select --install
