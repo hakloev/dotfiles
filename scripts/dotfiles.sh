@@ -33,8 +33,6 @@ function add_dotfiles() {
   success "Done creating symlink for dotfiles"
 }
 
-# The following function is taken from @kradalby's deploy.sh
-# https://github.com/kradalby/dotfiles/blob/master/deploy.sh
 function add_ssh() {
   info "Symlink ssh folder"
 
