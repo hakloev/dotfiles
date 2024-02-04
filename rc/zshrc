@@ -2,13 +2,8 @@
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Brew
 BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
-
-alias brew_edit="vim $BREW_REQUIREMENTS_DIR/Brewfile"
 
 brew_update() {
   (cd $BREW_REQUIREMENTS_DIR && brew bundle install) # temporary move to './requirements' and run 'brew bundle'
@@ -17,6 +12,8 @@ brew_update() {
 brew_cleanup() {
   (cd $BREW_REQUIREMENTS_DIR && brew bundle cleanup $1)
 }
+
+alias brew_edit="vim $BREW_REQUIREMENTS_DIR/Brewfile"
 
 # Other
 restart_bluetooth() {
@@ -27,6 +24,7 @@ serve() {
   ngrok ${1:-http} ${2:-3000}
 }
 
+# Alias
 alias dotfiles="cd $HOME/git/internal/dotfiles"
 
 alias cleanxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData/*"
@@ -50,18 +48,8 @@ alias gm='git merge'
 alias gp='git push'
 alias gpl='git pull'
 
-# GCP
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-
-# Project specific exports
-if [ -d $HOME/.rm ]; then
-  export PATH=$HOME/.rm:$PATH
-fi
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
