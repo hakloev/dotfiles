@@ -4,41 +4,45 @@ cd $HOME/git/internal/dotfiles
 
 source $(dirname "$0")/log.sh --source-only
 
-read -r -p "Link dotfiles? [yY/n] " -n 1 choice
-echo
-case $choice in
-  [yY])
-    sh scripts/dotfiles.sh
-    ;;
-  *)
-    warn "Skipping dotfiles"
-    ;;
-esac
+function perform_step() {
+  case $1 in
+    dotfiles)
+      sh scripts/dotfiles.sh
+      ;;
+    pip3)
+      pip3 install --user -r requirements/pip3.txt
+      ;;
+    macos)
+      sh scripts/macos.sh
+      ;;
+    *)
+      warn "Unknown step: '$1'"
+      ;;
+  esac
+}
 
-read -r -p "Install pip3 requirements? [yY/n] " -n 1 choice
-echo
-case $choice in
-  [yY])
-    info "Installing pip3 requirements"
-    pip3 install --user -r requirements/pip3.txt
-    success "Done installing pip3 requirements"
-    ;;
-  *)
-    warn "Skipping pip3 requirements"
-    ;;
-esac
+function read_step_choice() {
+  read -r -p "Do you want to perform the '$1' step? [yY] " -n 1 choice
+  echo
+  case $choice in
+    [yY])
+      info "Performing the '$1' step"
+      perform_step $1
+      ;;
+    *)
+      warn "Skipping the '$1' step"
+      ;;
+  esac
 
-case `uname` in
-  Darwin)
-    info "Run macOS configuration script"
-    sh scripts/macos.sh
+  if [ $? -ne 0 ]; then
+    error "Step '$1' failed in some way"
+  fi
+}
 
-    if [ $? -eq 0 ]; then
-      success "macOS dependencies installed"
-    else
-      warn "Failed to install macOS dependencies"
-    fi
-  ;;
-esac
+steps=("dotfiles" "pip3" "macos")
+
+for step in ${steps[@]}; do
+  read_step_choice $step
+done
 
 success "Done bootstraping"
