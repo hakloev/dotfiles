@@ -8,6 +8,7 @@ cask 'alacritty'
 cask 'iterm2'
 
 brew 'zsh'
+brew 'fish'
 brew 'starship'
 brew 'antidote'
 brew 'tmux'

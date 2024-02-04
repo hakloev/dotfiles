@@ -22,13 +22,17 @@ function install_vimplug() {
 function add_dotfiles() {
   info "Symlink dotfiles"
 
-  IGNORED_FOLDERS="alacritty|ssh|tmuxinator"
+  IGNORED="alacritty|ssh|tmuxinator|starship"
 
-  ls -1 $ORIGIN/rc | grep -Ev $IGNORED_FOLDERS | while read -r FILE;
+  ls -1 $ORIGIN/rc | grep -Ev $IGNORED | while read -r FILE;
   do
     ln -sf $ORIGIN/rc/$FILE $HOME/.$FILE
     info "Created symlink for $FILE to $HOME/.$FILE"
   done
+
+  mkdir -p $HOME/.config
+  ln -sf $ORIGIN/rc/starship.toml $HOME/.config/starship.toml
+  info "Created symlink for starship.toml to $HOME/.config/starship.toml"
 
   success "Done creating symlink for dotfiles"
 }
