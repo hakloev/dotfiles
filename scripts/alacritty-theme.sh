@@ -8,6 +8,12 @@ TARGET=$HOME/.config/alacritty/themes
 download_alacritty_theme() {
   THEME=${1:-oceanic_next}
   mkdir -p $TARGET
+
+  if [[ -f "$TARGET/$THEME.toml" ]]; then
+    warn "Alacritty theme already exits; not downloading"
+    return
+  fi
+
   curl -LOs --output-dir $TARGET "$BASE_URL/$THEME.toml"
   info "Downloaded Alacritty theme $THEME to $TARGET"
 }
