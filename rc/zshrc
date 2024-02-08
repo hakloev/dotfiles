@@ -51,5 +51,9 @@ alias gpl='git pull'
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"

@@ -31,14 +31,6 @@ fi
 # Maven
 export M2_REPO="$HOME/.m2/repository"
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-
-# GCP
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-
 # Project specific exports
 if [ -d $HOME/.rm ]; then
   export PATH=$HOME/.rm:$PATH
