@@ -6,19 +6,23 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 CLEAR='\033[0m'
 
+level() {
+  printf "%b%-9s${CLEAR} - %s\n" "$2" "[$1]" "$3"
+}
+
 info() {
-  printf "${CYAN}INFO${CLEAR}: $1\n"
+  level INFO $CYAN "$1"
 }
 
 warn() {
-  printf "${YELLOW}WARN${CLEAR}: $1\n"
+  level WARN $YELLOW "$1"
 }
 
 success() {
-  printf "${GREEN}SUCCESS${CLEAR}: $1\n"
+  level SUCCESS $GREEN "$1"
 }
 
 error() {
-  printf "${RED}ERROR${CLEAR}: $1\n"
+  level ERROR $RED "$1"
   exit
 }
