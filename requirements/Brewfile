@@ -33,6 +33,7 @@ brew 'maven'
 brew 'sqlite'
 brew 'go'
 brew 'go-task'
+brew 'golangci-lint'
 
 cask '1password'
 mas '1Password for Safari', id: 1569813296
