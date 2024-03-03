@@ -25,6 +25,7 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [fetch]
   prune = true
@@ -41,5 +42,14 @@
 [init]
   defaultBranch = main
 
-[url "git@github.com:reMarkable"]
-  insteadOf = https://github.com/reMarkable
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = -creatordate
+
+[merge]
+  conflictStyle = zdiff3
