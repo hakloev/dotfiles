@@ -27,6 +27,7 @@ function set_screenshot_dir() {
 function set_defaults() {
   sudo defaults write -g InitialKeyRepeat -int 10
   sudo defaults write -g KeyRepeat -int 1
+  sudo defaults write com.apple.Spotlight MenuItemHidden -int 1 # hide Spotlight
 }
 
 sudo -v
