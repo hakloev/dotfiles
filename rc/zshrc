@@ -24,6 +24,17 @@ serve() {
   ngrok ${1:-http} ${2:-3000}
 }
 
+# FZF
+
+fzf_git_checkout() {
+  git branch -l --sort=-committerdate | fzf --height 40% | tr -d '[:space:]*' | xargs git checkout
+}
+
+fzf_git_diff() {
+  preview_command="git diff $@ --color=always -- {}"
+  git diff "$@" --name-only | fzf --preview $preview_command --preview-window right,60%
+}
+
 # Alias
 alias dotfiles="cd $HOME/git/internal/dotfiles"
 
@@ -37,8 +48,10 @@ alias mux='tmuxinator'
 alias gl='git l'
 alias ga='git add'
 alias gs='git status -s'
-alias gd='git diff'
-alias gco='git checkout'
+alias gd='fzf_git_diff'
+alias gdi='git diff'
+alias gco='fzf_git_checkout'
+#alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gc='git commit'
 alias gcm='git commit -m'
