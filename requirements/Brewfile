@@ -34,18 +34,23 @@ brew 'sqlite'
 brew 'go'
 brew 'go-task'
 brew 'golangci-lint'
+brew 'protobuf'
 
 cask '1password'
+cask '1password-cli'
 mas '1Password for Safari', id: 1569813296
 mas 'Tailscale', id: 1475387142
 
 cask 'intellij-idea'
+cask 'zed'
 cask 'visual-studio-code'
 cask 'raycast'
 cask 'ngrok'
 cask 'rectangle'
 cask 'kap'
 brew 'gifski'
+
+cask 'geotag-photos-pro'
 
 cask 'google-chrome'
 cask 'firefox'
