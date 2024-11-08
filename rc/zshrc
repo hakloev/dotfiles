@@ -27,12 +27,19 @@ serve() {
 # FZF
 
 fzf_git_checkout() {
-  git branch -l --sort=-committerdate | fzf --height 40% | tr -d '[:space:]*' | xargs git checkout
+  git branch -l --sort=-committerdate | fzf --tmux center | tr -d '[:space:]*' | xargs git checkout
 }
 
 fzf_git_diff() {
+  repo_path="Current repo: $(git rev-parse --show-toplevel)"
   preview_command="git diff $@ --color=always -- {}"
-  git diff "$@" --name-only | fzf --preview $preview_command --preview-window right,60%
+  git diff "$@" --name-only | fzf --reverse --preview-label $repo_path --preview $preview_command --preview-window right,65% --tmux center,85%
+}
+
+fzf_git_log() {
+  hash_from_log="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
+  show_hash="$hash_from_log | xargs -I % sh -c 'git show --color=always %'"
+  git l | fzf --ansi --preview "$show_hash" --preview-window right,65% --tmux center,85%
 }
 
 # Alias
@@ -45,13 +52,12 @@ alias cat='bat'
 alias ls='eza' #alias ls='ls -G'
 alias mux='tmuxinator'
 
-alias gl='git l'
+alias gl='fzf_git_log'
 alias ga='git add'
 alias gs='git status -s'
 alias gd='fzf_git_diff'
 alias gdi='git diff'
 alias gco='fzf_git_checkout'
-#alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gc='git commit'
 alias gcm='git commit -m'

@@ -36,7 +36,7 @@
   unstage = reset HEAD --
   uncommit = reset --soft HEAD^
   # View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l = log --graph --color=always --format='%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit
   clean = "git branch --color=never --merged | egrep -v \"(^\\*|master|main|dev)\" | xargs git branch -d"
 
 [init]
