@@ -15,5 +15,5 @@ windows:
       root: ~/git/external/fyr/fyr-web
       panes:
         -
-        - npm run dev -- -p 8085
+        -
         -
