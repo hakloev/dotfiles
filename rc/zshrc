@@ -2,6 +2,9 @@
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+# 1Password plugins
+source ~/.config/op/plugins.sh
+
 # Brew
 BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
 
