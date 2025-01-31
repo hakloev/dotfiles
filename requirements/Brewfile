@@ -4,6 +4,7 @@ tap 'homebrew/cask-fonts'
 
 brew 'mas'
 
+cask 'ghostty'
 cask 'alacritty'
 cask 'iterm2'
 
