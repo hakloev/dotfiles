@@ -17,3 +17,6 @@ Thumbs.db
 # direnv
 .direnv
 .envrc
+
+# IDEA
+.idea
