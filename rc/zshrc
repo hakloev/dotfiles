@@ -23,10 +23,6 @@ restart_bluetooth() {
   sudo pkill bluetoothd
 }
 
-serve() {
-  ngrok ${1:-http} ${2:-3000}
-}
-
 # FZF
 
 fzf_git_checkout() {
@@ -79,3 +75,10 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
+
+if [[ $(uname) == "Darwin" ]]; then
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+  compdef _tailscale Tailscale # https://github.com/tailscale/tailscale/issues/14952
+fi
+
+autoload -U compinit && compinit

@@ -4,7 +4,7 @@ setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt SHARE_HISTORY
 
-export HISTSIZE=1000000 # Set history size
+export HISTSIZE=10000000 # Set history size
 export SAVEHIST=$HISTSIZE # Save history after logout
 export HISTFILE=$HOME/.zsh_history
 export HISTORY_IGNORE="(clear|history|exit|ls|gs|gd|cd|pwd)"

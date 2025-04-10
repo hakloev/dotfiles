@@ -1,6 +1,7 @@
 cask_args appdir: '~/Applications'
 tap 'homebrew/services'
 tap 'homebrew/cask-fonts'
+tap 'hashicorp/tap'
 
 brew 'mas'
 
@@ -46,7 +47,6 @@ cask 'intellij-idea'
 cask 'zed'
 cask 'visual-studio-code'
 cask 'raycast'
-cask 'ngrok'
 cask 'rectangle'
 cask 'kap'
 brew 'gifski'
@@ -67,12 +67,15 @@ brew 'docker'
 brew 'docker-compose'
 brew 'colima' # Replaces Docker Desktop
 
+brew 'pre-commit'
 brew 'direnv'
 
 cask 'google-cloud-sdk'
 
 cask 'font-jetbrains-mono-nerd-font'
 
-brew 'tfenv' # Terraform environment
+brew 'hashicorp/tap/terraform'
+#brew 'tfenv' # Terraform environment
+brew 'tfsec'
 brew 'terraform-ls'
 brew 'tflint'
