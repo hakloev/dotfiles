@@ -5,6 +5,8 @@ antidote load
 # 1Password plugins
 source ~/.config/op/plugins.sh
 
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 # Brew
 BREW_REQUIREMENTS_DIR=$HOME/git/internal/dotfiles/requirements
 
@@ -71,7 +73,8 @@ alias gpl='git pull'
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+   [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+   [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
