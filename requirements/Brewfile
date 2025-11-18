@@ -26,10 +26,11 @@ brew 'fzf'
 brew 'tree'
 brew 'tree-sitter'
 
+brew 'act'
+
 brew 'openjdk@17'
 brew 'python3'
 brew 'pipenv'
-brew 'nodejs'
 brew 'nvm'
 brew 'maven'
 brew 'sqlite'
@@ -55,13 +56,15 @@ cask 'geotag-photos-pro'
 
 cask 'google-chrome'
 cask 'firefox'
-cask 'vivaldi'
+cask 'firefox@developer-edition'
 cask 'postman'
 cask 'obsidian'
 cask 'remarkable'
+cask 'signal'
 cask 'slack'
 cask 'discord'
 cask 'sonos'
+cask 'chatgpt'
 
 brew 'docker'
 brew 'docker-compose'
@@ -70,7 +73,7 @@ brew 'colima' # Replaces Docker Desktop
 brew 'pre-commit'
 brew 'direnv'
 
-cask 'google-cloud-sdk'
+cask 'gcloud-cli'
 
 cask 'font-jetbrains-mono-nerd-font'
 
