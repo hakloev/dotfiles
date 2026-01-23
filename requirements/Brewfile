@@ -9,6 +9,8 @@ cask 'ghostty'
 cask 'alacritty'
 cask 'iterm2'
 
+cask 'linearmouse' # instead of e.g. logi-options
+
 brew 'zsh'
 brew 'starship'
 brew 'antidote'
@@ -59,7 +61,6 @@ cask 'firefox'
 cask 'firefox@developer-edition'
 cask 'postman'
 cask 'obsidian'
-cask 'remarkable'
 cask 'signal'
 cask 'slack'
 cask 'discord'
