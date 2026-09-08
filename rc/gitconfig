@@ -54,5 +54,5 @@
 [merge]
   conflictStyle = zdiff3
 [blame]
-	ignoreRevsFile = .git-blame-ignore-revs
+	ignoreRevsFile = 
 	markIgnoredLines = true
